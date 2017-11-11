@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D72E29AB-5402-4963-A5D9-AE45A6F750AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TileStageFormat</RootNamespace>
+    <AssemblyName>TileStageFormat</AssemblyName>
+    <DefaultLanguage>ja-JP</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation\Rect\AnimationRect.cs" />
+    <Compile Include="Animation\Rect\AnimationRectFrame.cs" />
+    <Compile Include="Animation\Rect\FAnimationRect.cs" />
+    <Compile Include="Animation\Rect\FAnimationRectFrame.cs" />
+    <Compile Include="BLOCK_AABB.cs" />
+    <Compile Include="BLOCK_VECTOR2.cs" />
+    <Compile Include="D2ArrayObject.cs" />
+    <Compile Include="D2StageFile.cs" />
+    <Compile Include="Events\CreateSquareTilesMapEvent.cs" />
+    <Compile Include="Events\ReadedHexagonImageHandler.cs" />
+    <Compile Include="Events\ReadedIsometricImageEvent.cs" />
+    <Compile Include="Events\ReadedRectImageEvent.cs" />
+    <Compile Include="Events\ReadedSquareImageEvent.cs" />
+    <Compile Include="Map\Rect\FImageRectMap.cs" />
+    <Compile Include="Map\Rect\FImageRectMapSprite.cs" />
+    <Compile Include="Map\Rect\ImageRectMap.cs" />
+    <Compile Include="Map\Square\CatAndPasteSquareTiles.cs" />
+    <Compile Include="Map\Square\ReplaceSquareTiles.cs" />
+    <Compile Include="Map\Square\FSquareTileMapRect.cs" />
+    <Compile Include="Map\Square\RangeSquareTiles.cs" />
+    <Compile Include="Map\Square\FSquareTileInfoMap.cs" />
+    <Compile Include="Map\Square\FSquareTileMapHeader.cs" />
+    <Compile Include="Map\Square\FSquareTilesTransposeFrame.cs" />
+    <Compile Include="Map\Square\FSquareTilesTransposeHeader.cs" />
+    <Compile Include="Map\Square\SquareTilesMap.cs" />
+    <Compile Include="Map\Square\SquareTilesTransposeAnimation.cs" />
+    <Compile Include="MediaDir.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RWHexagon.cs" />
+    <Compile Include="RWIsometric.cs" />
+    <Compile Include="RWRect.cs" />
+    <Compile Include="RWSquareTiles.cs" />
+    <Compile Include="RWSquareTilesMap.cs" />
+    <Compile Include="Tile\BaseImageTile.cs" />
+    <Compile Include="Tile\Hexagon\FHexagonTileInfo.cs" />
+    <Compile Include="Tile\Hexagon\FImageHexagonTile.cs" />
+    <Compile Include="Tile\Isometric\FImageIsometricTile.cs" />
+    <Compile Include="Tile\Isometric\FIsometricTileInfo.cs" />
+    <Compile Include="Tile\Rect\FImageRect.cs" />
+    <Compile Include="Tile\Rect\FImageRectInfo.cs" />
+    <Compile Include="Tile\Rect\ImageRect.cs" />
+    <Compile Include="Tile\Square\AnmSquareTile.cs" />
+    <Compile Include="Tile\Square\AnmSquareTileFrame.cs" />
+    <Compile Include="Tile\Square\FAnmSquareTileFrame.cs" />
+    <Compile Include="Tile\Square\FAnmSquareTileHeader.cs" />
+    <Compile Include="Tile\Square\FImageSquareTile.cs" />
+    <Compile Include="Tile\Square\FSquareTileInfo.cs" />
+    <Compile Include="Tile\Square\ImageSquareTile.cs" />
+    <Compile Include="Tile\Square\SquareTileAnimationInfo.cs" />
+    <Compile Include="Map\Square\SquareTilesTranspose.cs" />
+    <Compile Include="Map\Square\SquareTilesTransposeFrame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Map\Hexagon\" />
+    <Folder Include="Map\Isometric\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MC2DUtil">
+      <HintPath>..\MC2DUtil\bin\Release\MC2DUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

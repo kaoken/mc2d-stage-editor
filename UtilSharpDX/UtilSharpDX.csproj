@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBFB8F7C-D84F-4E28-8AE0-A9AEC349EB8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilSharpDX</RootNamespace>
+    <AssemblyName>UtilSharpDX</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DDSReader">
+      <HintPath>..\..\..\lib\C#\dds-reader-master\DDSReader\bin\Release\DDSReader.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Animation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Animation.4.0.1\lib\net45\SharpDX.Animation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.D3DCompiler.4.0.1\lib\net45\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Desktop, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Desktop.4.0.1\lib\net45\SharpDX.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct2D1.4.0.1\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D11.4.0.1\lib\net45\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11.Effects, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D11.Effects.4.0.1\lib\net45\SharpDX.Direct3D11.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D12, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D12.4.0.1\lib\net45\SharpDX.Direct3D12.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectComposition, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DirectComposition.4.0.1\lib\net45\SharpDX.DirectComposition.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DirectInput.4.0.1\lib\net45\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectManipulation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DirectManipulation.4.0.1\lib\net45\SharpDX.DirectManipulation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectSound, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DirectSound.4.0.1\lib\net45\SharpDX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DXGI.4.0.1\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Mathematics.4.0.1\lib\net45\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.MediaFoundation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.MediaFoundation.4.0.1\lib\net45\SharpDX.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.RawInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.RawInput.4.0.1\lib\net45\SharpDX.RawInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.XAudio2.4.0.1\lib\net45\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.XInput.4.0.1\lib\net45\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsciiStringDraw.cs" />
+    <Compile Include="BlendState\MCBlendStateMgr.cs" />
+    <Compile Include="BlendState\MCBlendStateData.cs" />
+    <Compile Include="Camera\MCBaseCamera.cs" />
+    <Compile Include="Camera\MCCamera.cs" />
+    <Compile Include="Camera\MCCameraMgr.cs" />
+    <Compile Include="Camera\MCTextureCamera.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Controls\ImageViwerContrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageViwerContrl.Designer.cs">
+      <DependentUpon>ImageViwerContrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D2\MCImageMgr.cs" />
+    <Compile Include="D2\MCPrintScreenTexture.cs" />
+    <Compile Include="D2\MCTexture.cs" />
+    <Compile Include="DrawingCommand\Default\DE2DScreenSprite.cs" />
+    <Compile Include="DrawingCommand\Default\DEDefaultSprite.cs" />
+    <Compile Include="DrawingCommand\Default\DEDefault.cs" />
+    <Compile Include="DrawingCommand\Default\DefaultDrawingEffectGroup.cs" />
+    <Compile Include="DrawingCommand\Default\DEMapChip.cs" />
+    <Compile Include="DrawingCommand\Default\DrawingEffectEx.cs" />
+    <Compile Include="DrawingCommand\Default\InitDrawingEffect.cs" />
+    <Compile Include="DrawingCommand\IDrawingEffectGroup.cs" />
+    <Compile Include="DrawingCommand\IMCSpriteRender.cs" />
+    <Compile Include="DrawingCommand\MCBatchDrawingMgr.cs" />
+    <Compile Include="DrawingCommand\MCCallBatchDrawing.cs" />
+    <Compile Include="DrawingCommand\MCDrawBase.cs" />
+    <Compile Include="DrawingCommand\MCDrawCommandPriority.cs" />
+    <Compile Include="DrawingCommand\MCDrawingEffect.cs" />
+    <Compile Include="DrawingCommand\MCTechniqueParameterMgr.cs" />
+    <Compile Include="DrawingCommand\SimpleDC\SimpleDefault.cs" />
+    <Compile Include="DrawingCommand\SimpleDC\SimpleDrawSpriteRegister.cs" />
+    <Compile Include="DrawingCommand\SimpleDC\DrawingEffectEx.cs" />
+    <Compile Include="DrawingCommand\SimpleDC\SimpleInitDrawingEffect.cs" />
+    <Compile Include="DrawingCommand\SimpleDC\SimpleDrawingEffectGroup.cs" />
+    <Compile Include="Exceptions\NotCreatedException.cs" />
+    <Compile Include="Exceptions\CreateFailedException.cs" />
+    <Compile Include="Exceptions\NotExistenceException.cs" />
+    <Compile Include="Exceptions\CreatedException.cs" />
+    <Compile Include="D2\Texture123DDesc.cs" />
+    <Compile Include="D2\IMCSourceMemoryTexture.cs" />
+    <Compile Include="D2\MCBaseTexture.cs" />
+    <Compile Include="D2\MCRenderTargetState.cs" />
+    <Compile Include="D2\MC_IMG_SOURCELOCATION.cs" />
+    <Compile Include="GraphicsDeviceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HLSL\HLSLIncludeResource.cs" />
+    <Compile Include="HLSL\HLSLIncludeFile.cs" />
+    <Compile Include="HLSL\HLSLMgr.cs" />
+    <Compile Include="HLSL\IMCEffect.cs" />
+    <Compile Include="HLSL\MCEffect.cs" />
+    <Compile Include="IDXDevice.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Math\AABB3D.cs" />
+    <Compile Include="Math\MathUnit.cs" />
+    <Compile Include="Math\MCCircle2.cs" />
+    <Compile Include="Math\MCMatrix2x2.cs" />
+    <Compile Include="Math\MCMatrix3x3.cs" />
+    <Compile Include="Math\MCMatrix4x4.cs" />
+    <Compile Include="Math\MCPlane2.cs" />
+    <Compile Include="Math\MCPlane3.cs" />
+    <Compile Include="Math\MCQuaternion.cs" />
+    <Compile Include="Math\MCVector2.cs" />
+    <Compile Include="Math\MCVector3.cs" />
+    <Compile Include="Math\MCVector4.cs" />
+    <Compile Include="Math\OBB3D.cs" />
+    <Compile Include="Math\Sphere.cs" />
+    <Compile Include="MCUtilValue.cs" />
+    <Compile Include="Mesh\Animation\MCAnimationKyeFrame.cs" />
+    <Compile Include="Mesh\Animation\MCKeyframeAnimationSet.cs" />
+    <Compile Include="Mesh\Animation\MCAnimatnSet.cs" />
+    <Compile Include="Mesh\MCBaseMesh.cs" />
+    <Compile Include="Mesh\MCBoneInfo.cs" />
+    <Compile Include="Mesh\MCDeclElementVertexBuffer.cs" />
+    <Compile Include="Mesh\MCFrameData.cs" />
+    <Compile Include="Mesh\MCMaterial.cs" />
+    <Compile Include="Mesh\MCMeshGeometry.cs" />
+    <Compile Include="Mesh\MCMeshMaterial.cs" />
+    <Compile Include="Mesh\MCMeshTexture.cs" />
+    <Compile Include="Mesh\MCMeshTree.cs" />
+    <Compile Include="Mesh\MCMeshVBlendBone.cs" />
+    <Compile Include="Mesh\MCMeshVertexIndex.cs" />
+    <Compile Include="Mesh\MCTransFormFrame.cs" />
+    <Compile Include="Mesh\MCMeshMgr.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SharpDXState.cs" />
+    <Compile Include="DrawingCommand\Default\DefaultDrawSpriteRegister.cs" />
+    <Compile Include="Sprite\MCRenderAlphanumericSprite.cs" />
+    <Compile Include="Sprite\MCBaseSprite.cs" />
+    <Compile Include="Sprite\MCAlphanumericSprite.cs" />
+    <Compile Include="Sprite\MCDrawAlphanumericSprite.cs" />
+    <Compile Include="Sprite\MCDrawSpriteBase.cs" />
+    <Compile Include="Sprite\MCDrawSprite.cs" />
+    <Compile Include="Sprite\MCDrawSquareAmountSprite.cs" />
+    <Compile Include="Sprite\MCSprite.cs" />
+    <Compile Include="Sprite\MCSpriteCat.cs" />
+    <Compile Include="Sprite\MCSpriteMgr.cs" />
+    <Compile Include="Sprite\MCRenderSprite.cs" />
+    <Compile Include="Sprite\MCRenderSquareAmountSprite.cs" />
+    <Compile Include="UtilTime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MC2DUtil\MC2DUtil.csproj">
+      <Project>{36B4CE13-FD3F-4444-B092-AAB6572B4701}</Project>
+      <Name>MC2DUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DrawingCommand\Default\Resource\test.txt" />
+    <EmbeddedResource Include="Controls\ImageViwerContrl.resx">
+      <DependentUpon>ImageViwerContrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ascii.png" />
+    <EmbeddedResource Include="Resources\256x256_bg.bmp" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\charMosaic.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\common.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\d2mapchip.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\D3dGame.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\sharedLight.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\sharedSkin.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\Default\Resource\sprite.hlsl" />
+    <Content Include="Regex.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DrawingCommand\ToolMC2D\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36B4CE13-FD3F-4444-B092-AAB6572B4701}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MC2DUtil</RootNamespace>
+    <AssemblyName>MC2DUtil</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bit32Change.cs" />
+    <Compile Include="Bit64Change.cs" />
+    <Compile Include="BitFieldAttributes.cs" />
+    <Compile Include="BitFieldExtensions.cs" />
+    <Compile Include="CharCodeJudge.cs" />
+    <Compile Include="ChunkFormat\BasicBody.cs" />
+    <Compile Include="ChunkFormat\Chunk.cs" />
+    <Compile Include="ChunkFormat\ChunkOffset.cs" />
+    <Compile Include="ChunkFormat\Header.cs" />
+    <Compile Include="ChunkFormat\LoadChank.cs" />
+    <Compile Include="ChunkFormat\LoadData.cs" />
+    <Compile Include="ChunkFormat\LoadState.cs" />
+    <Compile Include="ChunkFormat\SaveState.cs" />
+    <Compile Include="FileType.cs" />
+    <Compile Include="graphics\MCRect.cs" />
+    <Compile Include="graphics\mcRectF.cs" />
+    <Compile Include="graphics\UtilBitmap.cs" />
+    <Compile Include="graphics\UtilLine.cs" />
+    <Compile Include="MCNumberMgr.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerializableList.cs" />
+    <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="UtilBuffer.cs" />
+    <Compile Include="UtilFile.cs" />
+    <Compile Include="UtilTime.cs" />
+    <Compile Include="WinAPI\RECT.cs" />
+    <Compile Include="WinAPI\User32.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

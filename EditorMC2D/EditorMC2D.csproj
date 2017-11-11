@@ -1,0 +1,1202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8633642-CCC5-48EE-95F5-744841C728B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EditorMC2D</RootNamespace>
+    <AssemblyName>EditorMC2D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSCore, Version=1.2.1.1, Culture=neutral, PublicKeyToken=5a08f2b6f4415dea, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSCore.1.2.1.1\lib\net35-client\CSCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilSharpDX" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <HintPath>..\UtilSharpDX\bin\Release\UtilSharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilSharpDX" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <HintPath>..\UtilSharpDX\bin\Debug\UtilSharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="MC2DUtil" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <HintPath>..\MC2DUtil\bin\Release\MC2DUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="MC2DUtil" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <HintPath>..\MC2DUtil\bin\Debug\MC2DUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationCore.resources, Version=4.0.0.0, Culture=ja, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\ja\PresentationCore.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Scarlet">
+      <HintPath>..\..\..\lib\C#\Scarlet-1.1.4\Scarlet\bin\Release\Scarlet.dll</HintPath>
+    </Reference>
+    <Reference Include="Scarlet.IO.CompressionFormats">
+      <HintPath>..\..\..\lib\C#\Scarlet-1.1.4\Scarlet.IO.CompressionFormats\bin\Release\Scarlet.IO.CompressionFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Scarlet.IO.ContainerFormats">
+      <HintPath>..\..\..\lib\C#\Scarlet-1.1.4\Scarlet.IO.ContainerFormats\bin\Release\Scarlet.IO.ContainerFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Scarlet.IO.ImageFormats">
+      <HintPath>..\..\..\lib\C#\Scarlet-1.1.4\Scarlet.IO.ImageFormats\bin\Release\Scarlet.IO.ImageFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET">
+      <HintPath>..\..\..\lib\ScintillaNET-3.6.3\src\ScintillaNET\bin\Release\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-audio-2, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graphnode.SFML.Net.2.4\lib\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graphnode.SFML.Net.2.4\lib\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-system-2, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graphnode.SFML.Net.2.4\lib\sfmlnet-system-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graphnode.SFML.Net.2.4\lib\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.3.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TileStageFormat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TileStageFormat\bin\Release\TileStageFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.ThemeVS2015.3.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonMC2D.cs" />
+    <Compile Include="Common\CStageBackground.cs" />
+    <Compile Include="Common\CStageImageRectMap.cs" />
+    <Compile Include="Common\FileAndDir.cs" />
+    <Compile Include="Common\OutputWindow.cs" />
+    <Compile Include="Common\ProcessMC2D.cs" />
+    <Compile Include="Docking\Docment\AudioDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\AudioDoc.Designer.cs">
+      <DependentUpon>AudioDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\Audio\BasicSpectrumProvider.cs" />
+    <Compile Include="Docking\Docment\Audio\GradientCalculator.cs" />
+    <Compile Include="Docking\Docment\Audio\ISpectrumProvider.cs" />
+    <Compile Include="Docking\Docment\Audio\LineSpectrum.cs" />
+    <Compile Include="Docking\Docment\Audio\MusicPlayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\Audio\ScalingStrategy.cs" />
+    <Compile Include="Docking\Docment\Audio\SpectrumBase.cs" />
+    <Compile Include="Docking\Docment\Audio\VoicePrint3DSpectrum.cs" />
+    <Compile Include="Docking\Docment\Editors\AngelScriptEditorSetting.cs" />
+    <Compile Include="Docking\Docment\Editors\AngleScriptEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\Editors\AngleScriptEditor.designer.cs">
+      <DependentUpon>AngleScriptEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\Editors\BaseTextEditorSetting.cs" />
+    <Compile Include="Docking\Docment\Editors\HotKeyManager.cs" />
+    <Compile Include="Docking\Docment\Editors\NewLineEventArgs.cs" />
+    <Compile Include="Docking\Docment\Editors\Parsers\AngelScript\AngelScriptCodeInfo.cs" />
+    <Compile Include="Docking\Docment\Editors\Parsers\AngelScript\AngelScriptParser.cs" />
+    <Compile Include="Docking\Docment\Editors\Parsers\AngelScript\Parser.cs" />
+    <Compile Include="Docking\Docment\Editors\Parsers\AngelScript\Scanner.cs" />
+    <Compile Include="Docking\Docment\FontDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\FontDoc.Designer.cs">
+      <DependentUpon>FontDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\ImageViewerDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\ImageViewerDoc.Designer.cs">
+      <DependentUpon>ImageViewerDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\UtilMarker.cs" />
+    <Compile Include="Docking\OutputWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\OutputWindow.Designer.cs">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\AnimationChipEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\AnimationChipEdit.Designer.cs">
+      <DependentUpon>AnimationChipEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\AnimationChipSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\AnimationChipSelectForm.Designer.cs">
+      <DependentUpon>AnimationChipSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ChipSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ChipSelectForm.Designer.cs">
+      <DependentUpon>ChipSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ImageCatRECTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ImageCatRECTForm.Designer.cs">
+      <DependentUpon>ImageCatRECTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\MapChipEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\MapChipEditForm.Designer.cs">
+      <DependentUpon>MapChipEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\NewReplaceChipsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\NewReplaceChipsForm.Designer.cs">
+      <DependentUpon>NewReplaceChipsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\RangeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\RangeEditForm.Designer.cs">
+      <DependentUpon>RangeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ReplaceChipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\ReplaceChipForm.Designer.cs">
+      <DependentUpon>ReplaceChipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\Square\SquareDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\PixelTile\Square\SquareDoc.Designer.cs">
+      <DependentUpon>SquareDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Docment\TextDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\Docment\TextDoc.designer.cs">
+      <DependentUpon>TextDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ProcessMC2DStartEvent.cs" />
+    <Compile Include="Events\ProcessMC2DEndEvent.cs" />
+    <Compile Include="Events\AllSavedEvent.cs" />
+    <Compile Include="Events\AppConfigChangeEvent.cs" />
+    <Compile Include="Events\ClosedProjectEvent.cs" />
+    <Compile Include="Events\DocumentFocusEvent.cs" />
+    <Compile Include="Events\ProjectOpenedEvent .cs" />
+    <Compile Include="Events\DockThemeChangeEvent.cs" />
+    <Compile Include="Events\NewProjectCreatedEvent.cs" />
+    <Compile Include="Events\D2StageFileOpenedEvent.cs" />
+    <Compile Include="FileFormat\Format\FF_BACKGROUND.cs" />
+    <Compile Include="FileFormat\Format\FF_BACKGROUND_CHIP.cs" />
+    <Compile Include="FileFormat\Format\FF_BACKGROUND_RECT.cs" />
+    <Compile Include="FileSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSelectForm.designer.cs">
+      <DependentUpon>FileSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBG\AnimaRectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBG\AnimaRectForm.Designer.cs">
+      <DependentUpon>AnimaRectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBG\BGEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBG\BGEditForm.Designer.cs">
+      <DependentUpon>BGEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImageRectMap\AddImageRectMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImageRectMap\AddImageRectMapForm.Designer.cs">
+      <DependentUpon>AddImageRectMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImageRectMap\ImageRectMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImageRectMap\ImageRectMapForm.Designer.cs">
+      <DependentUpon>ImageRectMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.Splash.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.UIDocking.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\APPConfig.cs" />
+    <Compile Include="Option\Environment\FontAndColor.cs" />
+    <Compile Include="Option\Environment\FormFontAndColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\Environment\FormFontAndColor.designer.cs">
+      <DependentUpon>FormFontAndColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\FormOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\FormOption.designer.cs">
+      <DependentUpon>FormOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Environment\FormWhole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\Environment\FormWhole.designer.cs">
+      <DependentUpon>FormWhole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\RecentProject.cs" />
+    <Compile Include="Option\TextEditer\FormASTextEditorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\TextEditer\FormASTextEditorConfig.Designer.cs">
+      <DependentUpon>FormASTextEditorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Environment\Whole.cs" />
+    <Compile Include="Option\TextEditer\FormHlslEditorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\TextEditer\FormHlslEditorConfig.Designer.cs">
+      <DependentUpon>FormHlslEditorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\TextEditer\TextConfig.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\SolutionExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\SolutionExplorer.designer.cs">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilForm\AddMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UtilForm\AddMapForm.Designer.cs">
+      <DependentUpon>AddMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilForm\BlockCanvasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UtilForm\BlockCanvasForm.Designer.cs">
+      <DependentUpon>BlockCanvasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilForm\CollisionChipSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UtilForm\CollisionChipSelectForm.Designer.cs">
+      <DependentUpon>CollisionChipSelectForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\AudioDoc.resx">
+      <DependentUpon>AudioDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\Editors\AngleScriptEditor.resx">
+      <DependentUpon>AngleScriptEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\FontDoc.resx">
+      <DependentUpon>FontDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\ImageViewerDoc.resx">
+      <DependentUpon>ImageViewerDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\OutputWindow.resx">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\AnimationChipEdit.resx">
+      <DependentUpon>AnimationChipEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\AnimationChipSelectForm.resx">
+      <DependentUpon>AnimationChipSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\ChipSelectForm.resx">
+      <DependentUpon>ChipSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\ImageCatRECTForm.resx">
+      <DependentUpon>ImageCatRECTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\MapChipEditForm.resx">
+      <DependentUpon>MapChipEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\NewReplaceChipsForm.resx">
+      <DependentUpon>NewReplaceChipsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\RangeEditForm.resx">
+      <DependentUpon>RangeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\ReplaceChipForm.resx">
+      <DependentUpon>ReplaceChipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\PixelTile\Square\SquareDoc.resx">
+      <DependentUpon>SquareDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Docment\TextDoc.resx">
+      <DependentUpon>TextDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSelectForm.resx">
+      <DependentUpon>FileSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBG\AnimaRectForm.resx">
+      <DependentUpon>AnimaRectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBG\BGEditForm.resx">
+      <DependentUpon>BGEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImageRectMap\AddImageRectMapForm.resx">
+      <DependentUpon>AddImageRectMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImageRectMap\ImageRectMapForm.resx">
+      <DependentUpon>ImageRectMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Environment\FormFontAndColor.resx">
+      <DependentUpon>FormFontAndColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\FormOption.resx">
+      <DependentUpon>FormOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Environment\FormWhole.resx">
+      <DependentUpon>FormWhole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\TextEditer\FormASTextEditorConfig.resx">
+      <DependentUpon>FormASTextEditorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\SolutionExplorer.resx">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilForm\AddMapForm.resx">
+      <DependentUpon>AddMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilForm\BlockCanvasForm.resx">
+      <DependentUpon>BlockCanvasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilForm\CollisionChipSelectForm.resx">
+      <DependentUpon>CollisionChipSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\256x256_bg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_Cancel_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_create_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnmRectangle_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnmTile_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_c_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_c_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_c_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_RedoRetry_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_top_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_top_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_top_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_UndoRevertRestore_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ascii_dbg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_001_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_001_16xSM_debugger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_002_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_002_16xMD_debugger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_003_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_003_16xLG_debugger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_004_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_005_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_006_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookmarkDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookmarkGroupDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookmarkHorizontal_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookmarkMainMenuTabItem_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakConnection_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\breakpoint_Off_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointAdvance_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointAdvanceDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointBound_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointConditional_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisabledXHR_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnable_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnable_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnable_Grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnabled_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointError_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointUnbound_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointUnboundXHR_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointWindow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointXHR_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Building_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloudFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloudFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CollapseGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CollapseGroup_inverse_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colli_chip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColorPalette_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColorPicker_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColorWheel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConnectedServiceReferenceFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConnectedServiceReferenceFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPPFile_16x.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentContextArrowIcon_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentInstructionPointer_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentInstructionPointer_white_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentInstructionPointerPause_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentInstructionPointerStop_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentLocationArrowIcon_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DirectX3D_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editor_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditorWarning_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ErrorTypeFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandAll_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileError_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_Closed_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_Open_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderBrowserDialogControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderError_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderInformation_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOffline_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOpenWarning_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderSuppressed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderTopPanel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderWarning_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FRAME.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FRAME_CO.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FRAME_DE.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FRAME_ED.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FRAMEBAC.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graphics3D_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_Data_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GridLight_exp_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GridToggle_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gura.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hexagon_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_16X12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_cultured.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_modernist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageBrowser_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageButton_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageChisel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageMap_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageMapFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageStack_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InfoTooltip_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertLayer_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Isometric_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout_content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinkedFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinkedFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MapTileLayer_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mc2d_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Media_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie_blue_film_strip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie_blue_film_strip_g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewImageType_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewItem_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewSolutionFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewSoundFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextBookmark_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextBookmarkFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextBookmarkFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openHexagon_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openIsometric_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openSquare_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PackageFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PackageFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PipeFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PipeFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plan_8x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play1Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play1Hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayVideo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviewTab_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviousBookmark_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviousBookmarkFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviousBookmarkFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectFolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectFolderOpen_exp_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateLeft_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateRight_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Run_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Run_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunPerformance_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAll_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScrollbarArrowsDownRight_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScrollbarArrowsDownRight_noHalo1E_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScrollbarArrowsDownRight_noHaloWhite_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Select_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_square_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowAllFiles_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solution_16x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solution_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SoundFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop1Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop1NormalBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewFull_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Virtual_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualMachine_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualMachineError_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_FolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_RecycleBin_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Win32Project_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowsForm_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docking\Docment\Map\" />
+    <Folder Include="Docking\Docment\PixelTileAnimation\" />
+    <Folder Include="Docking\Docment\PixelTile\Hexagon\" />
+    <Folder Include="Docking\Docment\PixelTile\Isometric\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Output_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OutputGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Output_16x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_close_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_open_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_close_arrow_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_open_arrow_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepIntoArrow_16x.png" />
+    <None Include="Resources\StepIn_16x.png" />
+    <None Include="Resources\StepOver_16x.png" />
+    <None Include="Resources\StepOutArrow_16x.png" />
+    <None Include="Resources\StepOut_16x.png" />
+    <None Include="Resources\Stop_16x.png" />
+    <None Include="Resources\TileApplication_16x.png" />
+    <None Include="Resources\AddItem_16x.png" />
+    <None Include="Resources\AssemblerSourceFile_16x.png" />
+    <None Include="Resources\cgFile_16x.png" />
+    <EmbeddedResource Include="Resources\BeginningDockPanel.xml" />
+    <None Include="Resources\ClearWindowContent_16x.png" />
+    <None Include="Resources\ClearBookmark_16x.png" />
+    <None Include="Resources\BuildErrorList_16x.png" />
+    <None Include="Resources\ClearBreakpointGroup_16x.png" />
+    <None Include="Resources\DeleteBreakpoint_16x.png" />
+    <Content Include="Resources\folder_lock_Closed_16xLG.png" />
+    <Content Include="Resources\folder_lock_Open_16xLG.png" />
+    <None Include="Resources\NewImage_16x.png" />
+    <None Include="Resources\RawCodeCoverageDataFile_16x.png" />
+    <None Include="Resources\glsesFile_16x.png" />
+    <None Include="Resources\glesFile_16x.png" />
+    <None Include="Resources\hlslFile_16x.png" />
+    <None Include="Resources\Next_16x.png" />
+    <Content Include="Resources\Rename_6779.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets" Condition="Exists('..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
