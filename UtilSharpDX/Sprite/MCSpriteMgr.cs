@@ -1,5 +1,6 @@
 ﻿using MC2DUtil.graphics;
 using SharpDX.Direct3D11;
+using SharpDX.DXGI;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -29,6 +30,10 @@ namespace UtilSharpDX.Sprite
         /// </summary>
         ALPHANUMERIC,
         /// <summary>
+        /// スクエアタイル群
+        /// </summary>
+        SQUARE_TILES,
+        /// <summary>
         /// マスクスプライト
         /// </summary>
         MASK,
@@ -36,10 +41,6 @@ namespace UtilSharpDX.Sprite
         /// スクエア・タイルスプライト
         /// </summary>
         MAPCHIP,
-        /// <summary>
-        /// メッシュチップスプライト
-        /// </summary>
-        MESHMAPCHIP,
     }
 
     //======================================================================================
@@ -354,7 +355,7 @@ namespace UtilSharpDX.Sprite
         /// <param name="device">DirectXデバイス</param>
         /// <returns>通常、エラーが発生しなかった場合は 0 を返すようにプログラムする。</returns>
         [MethodImpl(MethodImplOptions.Synchronized)]
-        internal int OnCreateDevice(Device device)
+        internal int OnCreateDevice(SharpDX.Direct3D11.Device device)
         {
             int hr = 0;
             if (m_spriteRenders.Count == 0)
@@ -372,6 +373,10 @@ namespace UtilSharpDX.Sprite
                 m_spriteRendersIdx.Add(MCRenderAlphanumericSprite.RenderSpriteID, m_spriteRenders.Count);
                 m_spriteRenders.Add(new MCRenderAlphanumericSprite(App, (int)SPRITE_TYPE.ALPHANUMERIC, 1024));
 
+                // スクエア・タイルスプライト
+                m_spriteRendersIdx.Add(MCRenderSquareTilesSprite.RenderSpriteID, m_spriteRenders.Count);
+                m_spriteRenders.Add(new MCRenderSquareTilesSprite(App, (int)SPRITE_TYPE.SQUARE_TILES));
+
                 //// マスクスプライト
                 //m_spriteRendersIdx.Add(MCMaskSpriteRenderID, m_spriteRenders.Count);
                 //m_spriteRenders.Add(new MCMaskSpriteRender(App,(int)SPRITE_TYPE.MASK));
@@ -379,10 +384,6 @@ namespace UtilSharpDX.Sprite
                 //// スクエア・タイルスプライト
                 //m_spriteRendersIdx.Add(MCMapSquareTileSpriteRenderID, m_spriteRenders.Count);
                 //m_spriteRenders.Add(new MCMapSquareTileSpriteRender(App,(int)SPRITE_TYPE.MAPCHIP));
-
-                //// メッシュチップスプライト
-                //m_spriteRendersIdx.Add(MCMeshMapSquareTileSpriteRenderID, m_spriteRenders.Count);
-                //m_spriteRenders.Add(new MCMeshMapSquareTileSpriteRender(App,(int)SPRITE_TYPE.MESHMAPCHIP, 25 + 1, 25 + 1, 40));
             }
 
 
@@ -390,6 +391,22 @@ namespace UtilSharpDX.Sprite
 
             return hr;
         }
+
+        /// <summary>
+        /// スワップチェーンが変更された時に呼び出される
+        /// </summary>
+        /// <param name="device"></param>
+        /// <param name="swapChain"></param>
+        /// <param name="desc">変更後のスワップチェーン情報</param>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        internal　void OnSwapChainResized(SharpDX.Direct3D11.Device device, SwapChain swapChain, SwapChainDescription desc)
+        {
+            for (int i = 0; i < m_spriteRenders.Count; ++i)
+            {
+                m_spriteRenders[i].OnSwapChainResized(device, swapChain, desc);
+            }
+        }
+
         /// <summary>
         /// アプリで作成されたすべてのD3D11のリソースを解放
         /// </summary>

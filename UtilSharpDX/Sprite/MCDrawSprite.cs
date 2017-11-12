@@ -103,12 +103,7 @@ namespace UtilSharpDX.Sprite
             m_spSprite = r.m_spSprite;
             m_divNo = r.m_divNo;
         }
-        ////! 代入演算子
-        //public MCDrawSprite& operator = (MCDrawSprite &r)
-        //{
-        //    Set(r);
-        //    return *this;
-        //}
+
 
         /// <summary>
         /// カラー
@@ -222,7 +217,7 @@ namespace UtilSharpDX.Sprite
             {
                 App.BlendStateMgr.OMSetBlendState((int)BlendState);
             }
-            spriteRender.Render(App.ImmediateContext, pass);
+            spriteRender.Render(App.ImmediateContext, pass, this);
 
 
             return hr;

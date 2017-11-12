@@ -1,6 +1,7 @@
 ﻿using SharpDX;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
+using SharpDX.DXGI;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -127,7 +128,7 @@ namespace UtilSharpDX.Sprite
                 m_indexBuffer,
                 0,
                 MapMode.WriteDiscard,
-                MapFlags.None);
+                SharpDX.Direct3D11.MapFlags.None);
             //
 
             var pIn = (ushort*)box.DataPointer;
@@ -483,8 +484,9 @@ namespace UtilSharpDX.Sprite
         /// </summary>
         /// <param name="immediateContext">DeviceContextポインタ。</param>
         /// <param name="pass">EffectPassポインタ。</param>
+        /// <param name="drawSprite">基本描画スプライト</param>
         /// <return>通常、エラーが発生しなかった場合は MC_S_OK を返す。</return>
-        public int Render(DeviceContext immediateContext, EffectPass pass)
+        public int Render(DeviceContext immediateContext, EffectPass pass, MCDrawSpriteBase drawSprite)
         {
             int[] strides = new int[] { System.Runtime.InteropServices.Marshal.SizeOf(new MC_VERTEX_PCTx()) };
             int[] offsets = new int[] { 0 };
@@ -512,6 +514,14 @@ namespace UtilSharpDX.Sprite
             m_autoPpriorityNo = 0;
             m_drawSprites?.Clear();
         }
+
+        /// <summary>
+        /// スワップチェーンが変更された時に呼び出される
+        /// </summary>
+        /// <param name="device"></param>
+        /// <param name="swapChain"></param>
+        /// <param name="desc">変更後のスワップチェーン情報</param>
+        public void OnSwapChainResized(SharpDX.Direct3D11.Device device, SwapChain swapChain, SwapChainDescription desc) { }
 
         /// <summary>
         /// デバイス作成時の処理

@@ -198,6 +198,7 @@
     </Compile>
     <Compile Include="SharpDXState.cs" />
     <Compile Include="DrawingCommand\Default\DefaultDrawSpriteRegister.cs" />
+    <Compile Include="Sprite\MCDrawSquareTilesSprite.cs" />
     <Compile Include="Sprite\MCRenderAlphanumericSprite.cs" />
     <Compile Include="Sprite\MCBaseSprite.cs" />
     <Compile Include="Sprite\MCAlphanumericSprite.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Sprite\MCDrawSpriteBase.cs" />
     <Compile Include="Sprite\MCDrawSprite.cs" />
     <Compile Include="Sprite\MCDrawSquareAmountSprite.cs" />
+    <Compile Include="Sprite\MCRenderSquareTilesSprite.cs" />
     <Compile Include="Sprite\MCSprite.cs" />
     <Compile Include="Sprite\MCSpriteCat.cs" />
     <Compile Include="Sprite\MCSpriteMgr.cs" />

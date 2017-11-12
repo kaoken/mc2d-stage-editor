@@ -168,7 +168,7 @@ namespace UtilSharpDX.Sprite
             {
                 App.BlendStateMgr.OMSetBlendState((int)BlendState);
             }
-            spriteRender.Render(App.ImmediateContext, pass);
+            spriteRender.Render(App.ImmediateContext, pass, this);
 
             return 0;
         }

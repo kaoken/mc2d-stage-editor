@@ -761,7 +761,6 @@ namespace UtilSharpDX
             else
             {
                 var assm = Assembly.GetExecutingAssembly();
-                //BackgroundImage = Image.FromStream(assm.GetManifestResourceStream("UtilSharpDX.Resources.256x256_bg.bmp"));
                 BackColor = System.Drawing.Color.White;
                 BackgroundImageLayout = ImageLayout.Tile;
             }

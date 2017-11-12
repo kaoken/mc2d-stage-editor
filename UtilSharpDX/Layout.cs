@@ -64,7 +64,11 @@ namespace UtilSharpDX
         /// <summary>
         /// LAYOUT_INPUT_ELEMENT_KIND列挙体の最後の要素を表す
         /// </summary>
-        MAX = -1
+        MAX = -1,
+        /// <summary>
+        /// 不明
+        /// </summary>
+        UNKNOWN = -1
     }
 
 

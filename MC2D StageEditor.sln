@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileStageFormat", "TileStageFormat\TileStageFormat.csproj", "{D72E29AB-5402-4963-A5D9-AE45A6F750AD}"
 EndProject
@@ -18,6 +18,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "テスト", "テスト", "{9EC59142-9224-4F82-868A-A3F3073FF89F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilSharpDX Debug", "UtilSharpDX Debug\UtilSharpDX Debug.csproj", "{146D2602-3A46-4D60-A072-AE95187E59D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC51F139-A618-4630-8D4E-27B9D7F1C88A}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
