@@ -90,6 +90,19 @@ namespace UtilSharpDX.DrawingCommand
 
 
         /// <summary>
+        /// 入れ替え
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        private static void Swap<T>(ref T a, ref T b)
+        {
+            var t = a;
+            a = b;
+            b = t;
+        }
+
+        /// <summary>
         /// 登録された描画コマンドの半透明部分をm_fZValueFromCameraの値に応じてソートする
         /// </summary>
         /// <param name="items">対象配列数</param>
@@ -97,26 +110,33 @@ namespace UtilSharpDX.DrawingCommand
         /// <param name="right"></param>
         private static void RegisterQuickSort(ref MCDrawBase[] items, int left, int right)
         {
-            int l, r;
-            MCDrawBase x, y;
-            l = left; r = right;
-            x = items[(left + right) / 2];
-
-            do
+            if (left < right)
             {
-                while ((items[l].GetPriority().EntireRegion <= x.GetPriority().EntireRegion) & (l < right)) l++;
-                while ((x.GetPriority().EntireRegion > items[l].GetPriority().EntireRegion) & (r > left)) r--;
-
-                if (l <= r)
+                int i = left, j = right;
+                ulong pivot;
                 {
-                    y = items[l];
-                    items[l] = items[r];
-                    items[r] = y;
-                    l++; r--;
+                    ulong x = items[i].DrawCommandPriority.EntireRegion;
+                    ulong y = items[i + (j - i) / 2].DrawCommandPriority.EntireRegion;
+                    ulong z = items[j].DrawCommandPriority.EntireRegion;
+                    if (x < y)
+                        if (y < z) pivot = y;
+                        else if (z < x) pivot = x;
+                        else pivot = z;
+                    else if (z < y) pivot = y;
+                    else if (x < z) pivot = x;
+                    else pivot = z;
                 }
-            } while (l <= r);
-            if (left < r) RegisterQuickSort(ref items, left, r);
-            if (l < right) RegisterQuickSort(ref items, l, right);
+                while (true)
+                {
+                    while (items[i].DrawCommandPriority.EntireRegion < pivot) i++;
+                    while (pivot < items[j].DrawCommandPriority.EntireRegion) j--;
+                    if (i >= j) break;
+                    Swap(ref items[i], ref items[j]);
+                    i++; j--;
+                }
+                RegisterQuickSort(ref items, left, i - 1);
+                RegisterQuickSort(ref items, j + 1, right);
+            }
         }
         /// <summary>
         /// 描画コマンドをソートする
@@ -125,6 +145,7 @@ namespace UtilSharpDX.DrawingCommand
         private void Sorting()
 	    {
             if (m_DCRegNum == 0) return;
+            for (int i = 0; i < m_DCRegNum; ++i) m_aDrawCommand[i].DrawCommandPriority.Build();
             RegisterQuickSort(ref m_aDrawCommand, 0, m_DCRegNum - 1);
 	    }
         /// <summary>
@@ -135,27 +156,33 @@ namespace UtilSharpDX.DrawingCommand
         /// <param name="right"></param>
         private static void TranslucenceQuickSort(ref MCDrawBase[] items, int left, int right)
         {
-            int l, r;
-            MCDrawBase x, y;
-            l = left; r = right;
-            x = items[(left + right) / 2];
-
-            do
+            if (left < right)
             {
-                while ((items[l].GetZValueFromCamera() <= x.GetZValueFromCamera()) & (l < right)) l++;
-                while ((x.GetZValueFromCamera() > items[l].GetZValueFromCamera()) & (r > left)) r--;
-
-                if (l <= r)
+                int i = left, j = right;
+                float pivot;
                 {
-                    y = items[l];
-                    items[l] = items[r];
-                    items[r] = y;
-                    l++; r--;
+                    float x = items[i].GetZValueFromCamera();
+                    float y = items[i + (j - i) / 2].GetZValueFromCamera();
+                    float z = items[j].GetZValueFromCamera();
+                    if (x < y)
+                        if (y < z) pivot = y;
+                        else if (z < x) pivot = x;
+                        else pivot = z;
+                    else if (z < y) pivot = y;
+                    else if (x < z) pivot = x;
+                    else pivot = z;
                 }
-            } while (l <= r);
-            if (left < r) RegisterQuickSort(ref items, left, r);
-            if (l < right) RegisterQuickSort(ref items, l, right);
-
+                while (true)
+                {
+                    while (items[i].GetZValueFromCamera() < pivot) i++;
+                    while (pivot < items[j].GetZValueFromCamera()) j--;
+                    if (i >= j) break;
+                    Swap(ref items[i], ref items[j]);
+                    i++; j--;
+                }
+                TranslucenceQuickSort(ref items, left, i - 1);
+                TranslucenceQuickSort(ref items, j + 1, right);
+            }
         }
         /// <summary>
         /// 描画コマンドターゲットの半透明部分をm_fZValueFromCameraの値に応じてソートする
@@ -454,7 +481,7 @@ namespace UtilSharpDX.DrawingCommand
                                         // カメラ位置からのZ値をセット
                                         tmpDC.SetZValueFromCamera(fZ);
                                         // そしてターゲット登録
-                                        if (!tmpDC.GetPriority().D3Translucent)
+                                        if (!tmpDC.DrawCommandPriority.D3Translucent)
                                         {
                                             // 不透明
                                             m_aDrawComandTarget[targetMax++] = tmpDC;
@@ -523,7 +550,7 @@ namespace UtilSharpDX.DrawingCommand
                                         //--------------------------
                                         // 描画ターゲットの呼び出し
                                         //--------------------------
-                                        priorityTmp = m_aDrawComandTarget[targetCnt].GetPriority();
+                                        priorityTmp = m_aDrawComandTarget[targetCnt].DrawCommandPriority;
 
                                         if (priorityTmp.D3)
                                         {
@@ -545,8 +572,8 @@ namespace UtilSharpDX.DrawingCommand
                                             }
                                             if ((targetCnt + 1) < targetMax)
                                             {
-                                                if (priorityTmp.D3TypeFlags != m_aDrawComandTarget[targetCnt + 1].GetPriority().D3TypeFlags ||
-                                                    priorityTmp.Technique != m_aDrawComandTarget[targetCnt + 1].GetPriority().Technique)
+                                                if (priorityTmp.D3TypeFlags != m_aDrawComandTarget[targetCnt + 1].DrawCommandPriority.D3TypeFlags ||
+                                                    priorityTmp.Technique != m_aDrawComandTarget[targetCnt + 1].DrawCommandPriority.Technique)
                                                 {
                                                     // タイプが変わった（例：通常からボーンに変わったとか）
                                                     if (passCnt == (maxPassNum - 1))
@@ -574,8 +601,8 @@ namespace UtilSharpDX.DrawingCommand
                                             }
                                             if ((targetCnt + 1) < targetMax)
                                             {
-                                                if (priorityTmp.D2RenderType != m_aDrawComandTarget[targetCnt + 1].GetPriority().D2RenderType ||
-                                                    priorityTmp.Technique != m_aDrawComandTarget[targetCnt + 1].GetPriority().Technique)
+                                                if (priorityTmp.D2RenderType != m_aDrawComandTarget[targetCnt + 1].DrawCommandPriority.D2RenderType ||
+                                                    priorityTmp.Technique != m_aDrawComandTarget[targetCnt + 1].DrawCommandPriority.Technique)
                                                 {
                                                     // スプライト処理タイプが変わった または 
                                                     // テクニックが変わった
@@ -591,7 +618,7 @@ namespace UtilSharpDX.DrawingCommand
                                         }
 
                                         // MCDrawCommandPriorityの保存
-                                        priorityOld = m_aDrawComandTarget[targetCnt].GetPriority();
+                                        priorityOld = m_aDrawComandTarget[targetCnt].DrawCommandPriority;
                                     }
                                     if (hr!=0){
 		                                de.OnRenderEnd(device, immediateContext, i);

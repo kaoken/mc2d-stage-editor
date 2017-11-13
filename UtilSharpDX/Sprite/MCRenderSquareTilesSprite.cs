@@ -46,8 +46,11 @@ namespace UtilSharpDX.Sprite
 
 
 
-        // 頂点
-        List<MCDrawSquareTilesSprite> m_drawSprites;
+        /// <summary>
+        /// 頂点群
+        /// </summary>
+        List<MCDrawSquareTilesSprite> m_drawSprites = new List<MCDrawSquareTilesSprite>();
+
         /// <summary>
         /// 描画スプライト数
         /// </summary>

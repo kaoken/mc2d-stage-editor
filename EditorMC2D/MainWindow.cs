@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using UtilSharpDX;
 
 namespace EditorMC2D
 {
@@ -26,6 +27,7 @@ namespace EditorMC2D
         /// MC2D実行ファイルがあるディレクトリーパス
         /// </summary>
         private string m_dirPathMC2D = "";
+
         CommonMC2D m_com;
 
         /// <summary>
@@ -35,6 +37,7 @@ namespace EditorMC2D
         {
             m_com = CommonMC2D.Instance;
             InitializeComponent();
+            //
             AutoScaleMode = AutoScaleMode.Dpi;
             m_com.MainWindow = this;
 

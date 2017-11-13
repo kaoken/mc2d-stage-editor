@@ -12,7 +12,7 @@ namespace UtilSharpDX.DrawingCommand.SimpleDC
     public abstract class DrawingEffectEx : MCDrawingEffect
     {
 
-        public const string HLSL_FILE = "sprite.hlsl";
+        public const string HLSL_FILE = "sprite.cfx";
 
 
         /// <summary>

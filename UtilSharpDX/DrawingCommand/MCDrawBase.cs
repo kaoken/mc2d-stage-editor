@@ -16,67 +16,59 @@ namespace UtilSharpDX.DrawingCommand
         /// <summary>
         ///  MCDrawCommandPriority構造体の一部のパラメーターを使う
         /// </summary>
-        private MCDrawCommandPriority m_priority;
+        internal MCDrawCommandPriority DrawCommandPriority = new MCDrawCommandPriority();
 
         /// <summary>
         /// テクニック
         /// </summary>
-        public int Technique { get { return (int)m_priority.Technique; } set { m_priority.Technique = (byte)value; } }
+        public int Technique { get { return (int)DrawCommandPriority.Technique; } set { DrawCommandPriority.Technique = (byte)value; } }
 
         /// <summary>
         /// D3　G,B,T,M
         /// </summary>
-        public int D3State { get { return (int)m_priority.D3State; } set { m_priority.D3State = (byte)value; } }
+        public int D3State { get { return (int)DrawCommandPriority.D3State; } set { DrawCommandPriority.D3State = (byte)value; } }
 
         /// <summary>
         /// D3　描画優先順位
         /// </summary>
-        public int D3No { get { return (int)m_priority.D3No; } set { m_priority.D3No = (byte)value; } }
+        public int D3No { get { return (int)DrawCommandPriority.D3No; } set { DrawCommandPriority.D3No = (byte)value; } }
 
         /// <summary>
         /// D3　D3　タイプ（ボーンなど）のフラグ
         /// </summary>
-        public int D3TypeFlags { get { return (int)m_priority.D3TypeFlags; } set { m_priority.D3TypeFlags = (byte)value; } }
+        public int D3TypeFlags { get { return (int)DrawCommandPriority.D3TypeFlags; } set { DrawCommandPriority.D3TypeFlags = (byte)value; } }
 
         /// <summary>
         /// D3　半透明か？
         /// </summary>
-        public bool IsD3Translucent { get { return m_priority.D3Translucent; } set { m_priority.D3Translucent = value; } }
+        public bool IsD3Translucent { get { return DrawCommandPriority.D3Translucent; } set { DrawCommandPriority.D3Translucent = value; } }
 
         /// <summary>
         /// D3　半透明か？
         /// </summary>
-        public int Effect { get { return (int)m_priority.Effect; } set { m_priority.Effect = (byte)value; } }
+        public int Effect { get { return (int)DrawCommandPriority.Effect; } set { DrawCommandPriority.Effect = (byte)value; } }
 
         /// <summary>
         /// D2　描画順
         /// </summary>
-        public int D2No { get { return (int)m_priority.D2No; } set { m_priority.D2No = (uint)value; } }
+        public int D2No { get { return (int)DrawCommandPriority.D2No; } set { DrawCommandPriority.D2No = (uint)value; } }
 
         /// <summary>
         /// D2　スプライト処理タイプの番号
         /// </summary>
-        public int D2RenderType { get { return (int)m_priority.D2RenderType; } internal set { m_priority.D2RenderType = (ulong)value; } }
+        public int D2RenderType { get { return (int)DrawCommandPriority.D2RenderType; } internal set { DrawCommandPriority.D2RenderType = (ulong)value; } }
 
         /// <summary>
         /// 3Dか？
         /// </summary>
         /// <returns></returns>
-        public bool Is3D { get { return m_priority.D3; } set { m_priority.D3 = value; } }
+        public bool Is3D { get { return DrawCommandPriority.D3; } set { DrawCommandPriority.D3 = value; } }
 
         /// <summary>
         /// 2Dか？
         /// </summary>
         /// <returns></returns>
-        public bool Is2D { get { return !m_priority.D3; } set { m_priority.D3 = !value; } }
-
-
-        /// <summary>
-        /// MCDrawCommandPriority
-        /// </summary>
-        /// <returns></returns>
-        public MCDrawCommandPriority DrawCommandPriority { get { return m_priority; } }
-
+        public bool Is2D { get { return !DrawCommandPriority.D3; } set { DrawCommandPriority.D3 = !value; } }
 
 
 
@@ -148,13 +140,6 @@ namespace UtilSharpDX.DrawingCommand
         /// <param name="fZ">カメラ化の距離</param>
 		internal abstract void SetZValueFromCamera(float fZ);
 
-
-        /// <summary>
-        /// 描画コマンドで使用する。プライオリティーを取得する
-        /// </summary>
-        /// <returns>プライオリティーを取得する</returns>
-		internal MCDrawCommandPriority GetPriority() { return m_priority; }
-
         /// <summary>
         /// 派生したクラスなどを示す任意のidを返す
         /// </summary>
@@ -165,6 +150,6 @@ namespace UtilSharpDX.DrawingCommand
         /// コンストラクタ
         /// </summary>
         public MCDrawBase()
-        { m_priority.Init(); }
+        { DrawCommandPriority.Init(); }
     };
 }

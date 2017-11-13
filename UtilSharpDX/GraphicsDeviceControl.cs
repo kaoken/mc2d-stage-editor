@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UtilSharpDX.Camera;
 using UtilSharpDX.D2;
@@ -83,6 +84,13 @@ namespace UtilSharpDX
         [Category("DesignMode")]
         [Description("デザインモードでの表示文字")]
         public string DesignModeTitle { get; set; }
+
+
+        private int m_renderSleep = 50;
+        /// <summary>
+        /// 
+        /// </summary>
+        public int RenderSleep { get { return m_renderSleep; } set { m_renderSleep = value; } }
 
         /// <summary>
         /// このクラスでのみ使用するAPP
@@ -303,7 +311,9 @@ namespace UtilSharpDX
         /// </summary>
         public GraphicsDeviceControl()
         {
-            if(EffectGroupID == null)
+            DXState = new SharpDXState();
+
+            if (EffectGroupID == null)
             {
                 EffectGroupID = DefaultDrawingEffectGroup.DrawingEffectGroupID;
             }
@@ -507,12 +517,12 @@ namespace UtilSharpDX
         /// </summary>
         void Render3DEnvironment()
         {
-            if (m_app.DXDevice == null || m_app.ImmediateContext == null || m_app.SwapChain == null) return;
+            if ( !DXState.DeviceCreated && m_app.DXDevice == null || m_app.ImmediateContext == null || m_app.SwapChain == null) return;
 
             if (IsRenderingPaused() || !IsActive || DXState.RenderingOccluded)
             {
                 // ウィンドウは最小化/一時停止/閉塞/排他的ではないため、CPU時間を他のプロセスに与える
-                Thread.Sleep(50);
+                //Thread.Sleep(RenderSleep);
             }
 
             if (UserResized)
@@ -625,6 +635,7 @@ namespace UtilSharpDX
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <param name="isFullScreen"></param>
+        [MethodImpl(MethodImplOptions.Synchronized)]
         void ResizeDXGIBuffers(int width, int height)
         {
             if (m_app.BackBuffer!=null && m_app.SwapChainDesc.ModeDescription.Width == width &&
@@ -735,7 +746,6 @@ namespace UtilSharpDX
         /// </summary>
         protected override void OnCreateControl()
         {
-            DXState = new SharpDXState();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.Opaque | ControlStyles.UserPaint, true);
             UpdateStyles();
             ResizeRedraw = true;
@@ -749,11 +759,17 @@ namespace UtilSharpDX
             if (!DesignMode)
             {
                 CrateDevice();
-
-
+                //Task.Run(() => {
+                //    while (!DXState.DeviceEnded)
+                //    {
+                //        Render3DEnvironment();
+                //        Task.Delay(16);
+                //    }
+                //});
                 m_paintTimer = new System.Windows.Forms.Timer();
                 m_paintTimer.Interval = 16;
-                m_paintTimer.Tick += new EventHandler((object sender, EventArgs e) => {
+                m_paintTimer.Tick += new EventHandler((object sender, EventArgs e) =>
+                {
                     Render3DEnvironment();
                 });
                 m_paintTimer.Start();
@@ -765,7 +781,14 @@ namespace UtilSharpDX
                 BackgroundImageLayout = ImageLayout.Tile;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+            base.WndProc(ref m);
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -884,7 +907,18 @@ namespace UtilSharpDX
         /// <param name="fps">最後のフレームからの経過時間 (秒単位) です。     </param>
         private void FrameRender(double startUpTime, float elapsedTime, float fps)
         {
-            if (IsRenderPause)
+            // ASCII
+            m_app.AsciiText?.OnFrameRender(startUpTime, elapsedTime, fps);
+
+            OnFrameRender(startUpTime, elapsedTime, fps);
+            //+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            //|登録されているすべての描画処理を開始する
+            //+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            m_app.BatchDrawingMgr?.AllDrawing(m_app.DXDevice, m_app.ImmediateContext, startUpTime, elapsedTime);
+
+
+            
+            if (DXState.RenderingPaused)
             {
                 //=====================================
                 // 登録されているすべての描画処理を
@@ -896,14 +930,6 @@ namespace UtilSharpDX
                 m_app.BatchDrawingMgr?.AllDrawingReset();
                 return;
             }
-            // ASCII
-            m_app.AsciiText?.OnFrameRender(startUpTime, elapsedTime, fps);
-
-            OnFrameRender(startUpTime, elapsedTime, fps);
-            //+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-            //|登録されているすべての描画処理を開始する
-            //+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-            m_app.BatchDrawingMgr?.AllDrawing(m_app.DXDevice, m_app.ImmediateContext, startUpTime, elapsedTime);
         }
 
 
@@ -973,6 +999,7 @@ namespace UtilSharpDX
 
             OnEndDevice();
             GC.Collect();
+            DXState.DeviceEnded = true;
         }
         #endregion
 

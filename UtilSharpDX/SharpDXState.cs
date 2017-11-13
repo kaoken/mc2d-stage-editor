@@ -53,6 +53,10 @@ namespace UtilSharpDX
         /// </summary>
         public bool DeviceCreated { get; set; }
         /// <summary>
+        /// trueの場合、CreateDevice 成功
+        /// </summary>
+        public bool DeviceEnded { get; set; }
+        /// <summary>
         /// trueの場合、DeviceResetコールバックが呼び出されました（NULLでない場合）
         /// </summary>
         public bool DeviceObjectsReset;
@@ -72,6 +76,7 @@ namespace UtilSharpDX
         /// </summary>
         public SharpDXState()
         {
+            DeviceEnded = false;
         }
     }
 }

@@ -178,12 +178,12 @@ namespace UtilSharpDX.DrawingCommand.Default
         /// <returns>通常、エラーが発生しなかった場合は 0 を返す。</returns>
         internal override int OnCheckChangeTechnique(MCDrawBase db)
         {
-            if (db.GetPriority().Technique >= (ulong)MC_DCPRIORITY.TECHNIC_MAX)
+            if (db.DrawCommandPriority.Technique >= MCDrawCommandPriority.TECHNIC_MAX)
             {
                 return 0;
             }
 
-            SetCurrentTechnicNo((int)db.GetPriority().Technique);
+            SetCurrentTechnicNo((int)db.DrawCommandPriority.Technique);
 
             return 0;
         }

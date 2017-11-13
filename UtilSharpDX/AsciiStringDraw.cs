@@ -180,7 +180,7 @@ namespace UtilSharpDX
                 draw.Text = m_Texts[i].Text;
                 draw.AlignFlags = (int)MC_ANC.STR_ALL;
                 draw.Sprite = m_asciiSprite;
-                draw.D2No = (int)(MC_DCPRIORITY.D2NO_MAX - 1);
+                draw.D2No = (int)(MCDrawCommandPriority.D2NO_MAX - 1);
                 draw.Build();
 
                 iASprite.RegistrationDrawingCommand(

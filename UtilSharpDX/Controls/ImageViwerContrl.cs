@@ -232,6 +232,7 @@ namespace UtilSharpDX.Controls
 
             m_imageDrawSprite.Technique = (int)EffectID.Default;
             m_imageDrawSprite.Effect = (int)DCRL.DEFAULT;
+            m_imageDrawSprite.D2No = 1;
 
             m_imageTx = (MCTexture)m_imageSprite.Texture00;
         }

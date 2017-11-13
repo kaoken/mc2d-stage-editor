@@ -135,17 +135,32 @@ namespace UtilSharpDX.HLSL
             if (GetEffect(srcFile, out effect)) return 0;
 
 
-            // エントリーと一致しないこと。リソースをロードして、新しいエントリーを作ってください。
-            // メモリ内のバイナリBLOBにHLSLファイルからエフェクトをコンパイルします。
-            var effectByteCode = ShaderBytecode.CompileFromFile("HLSL\\"+srcFile, "fx_5_0", ShaderFlags.None, EffectFlags.None, null, new HLSLIncludeFile());
-            if (effectByteCode.HasErrors)
+            Effect effectTmp;
+            if (Path.GetExtension(srcFile) == ".cfx")
             {
-                Debug.WriteLine(errMsg);
-                errMsg = effectByteCode.Message;
-                return -1;
+                byte[] effectByteCode;
+                var fs = new System.IO.FileStream(
+                    srcFile,
+                    System.IO.FileMode.Open,
+                    System.IO.FileAccess.Read);
+                    effectByteCode = new byte[fs.Length];
+                    fs.Read(effectByteCode, 0, (int)fs.Length);
+                fs.Close();
+                effectTmp = new Effect(App.DXDevice, effectByteCode);
             }
-            Debug.WriteLine(errMsg);
-            var effectTmp = new Effect(App.DXDevice, effectByteCode);
+            else
+            {
+                var effectByteCode = ShaderBytecode.CompileFromFile("HLSL\\" + srcFile, "fx_5_0", ShaderFlags.None, EffectFlags.None, null, new HLSLIncludeFile());
+                if (effectByteCode.HasErrors)
+                {
+                    Debug.WriteLine(errMsg);
+                    errMsg = effectByteCode.Message;
+                    return -1;
+                }
+                Debug.WriteLine(errMsg);
+                effectTmp = new Effect(App.DXDevice, effectByteCode);
+            }
+
 
             effect = new MCEffect(effectTmp, HLSLRSC_SOURCELOCATION.FILE, srcFile);
             RegisterHLSL(srcFile, effect);
@@ -171,31 +186,43 @@ namespace UtilSharpDX.HLSL
             if (GetEffect(srcFile, out effect)) return 0;
 
 
-            // エントリーと一致しないこと。リソースをロードして、新しいエントリーを作ってください。
-            // メモリ内のバイナリBLOBにHLSLファイルからエフェクトをコンパイルします。
 
             //System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
             //string[] names = myAssembly.GetManifestResourceNames(); // it is really there by its name "shader.tkb"
             //Stream myStream = myAssembly.GetManifestResourceStream(names[0]);
 
-            string hlslText;
-            using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePrefix + "." + srcFile))
-            {
-                using (StreamReader r = new StreamReader(s))
-                {
-                    hlslText = r.ReadToEnd();
-                }
-            }
 
-            var effectByteCode = ShaderBytecode.Compile(hlslText, "fx_5_0", ShaderFlags.None, EffectFlags.None, null, new HLSLIncludeResource(resourcePrefix));
-            if (effectByteCode.HasErrors)
+            Effect effectTmp;
+            if (Path.GetExtension(srcFile) == ".cfx")
             {
-                Debug.WriteLine(errMsg);
-                errMsg = effectByteCode.Message;
-                return -1;
+                byte[] effectByteCode;
+                using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePrefix + "." + srcFile))
+                {
+                    effectByteCode = new byte[s.Length];
+                    s.Read(effectByteCode, 0, (int)s.Length);
+                }
+                effectTmp = new Effect(App.DXDevice, effectByteCode);
             }
-            Debug.WriteLine(errMsg);
-            var effectTmp = new Effect(App.DXDevice, effectByteCode);
+            else
+            {
+                string hlslText;
+                using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePrefix + "." + srcFile))
+                {
+                    using (StreamReader r = new StreamReader(s))
+                    {
+                        hlslText = r.ReadToEnd();
+                    }
+                }
+                var effectByteCode = ShaderBytecode.Compile(hlslText, "fx_5_0", ShaderFlags.None, EffectFlags.None, null, new HLSLIncludeResource(resourcePrefix));
+                if (effectByteCode.HasErrors)
+                {
+                    Debug.WriteLine(errMsg);
+                    errMsg = effectByteCode.Message;
+                    return -1;
+                }
+                Debug.WriteLine(errMsg);
+                effectTmp = new Effect(App.DXDevice, effectByteCode.Bytecode);
+            }
 
             effect = new MCEffect(effectTmp, HLSLRSC_SOURCELOCATION.RESOURCE, srcFile);
             RegisterHLSL(srcFile, effect);

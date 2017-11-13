@@ -16,7 +16,7 @@ namespace UtilSharpDX_Debug
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageViewerDoc());
+            Application.Run(new SelectForm());
         }
     }
 }

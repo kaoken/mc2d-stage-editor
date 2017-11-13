@@ -13,6 +13,7 @@ using System.Reflection;
 using Imaging.DDSReader;
 using System.Drawing.Imaging;
 using SharpDX.Mathematics.Interop;
+using DirectXTexNet;
 
 namespace UtilSharpDX.D2
 {
@@ -104,13 +105,7 @@ namespace UtilSharpDX.D2
 
             return tx;
         }
-        /// <summary>
-        /// <see cref="LoadDDS"/>内でのみ使用する
-        /// </summary>
-        private struct Color4Byte
-        {
-            public byte Red, Green, Blue, Alpha;
-        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -118,47 +113,24 @@ namespace UtilSharpDX.D2
         /// <param name="filename"></param>
         /// <param name="resource">null の場合、ファイル読み込み、nullでない場合リソース読み込み。リソースの場合、呼び出し後解放されます</param>
         /// <returns></returns>
-        protected static BitmapSource LoadDDS(ImagingFactory2 factory, string filename, Stream resource = null)
+        protected static unsafe BitmapSource LoadDDS(ImagingFactory2 factory, string filename, Stream resource = null)
         {
-            System.Drawing.Bitmap srcBmp=null;
-
+            IScratchImage si;
             if (resource == null)
-                srcBmp = DDS.LoadImage(filename);
+                si = DirectXTexNet.DirectXTex.LoadFromDDSFile(filename,DDSFlags.FORCE_RGB);
             else
+                si = DirectXTexNet.DirectXTex.LoadFromDDSResource(filename, DDSFlags.FORCE_RGB);
+
+            var bff = si.GetRawBytes(0, 0);
+            SharpDX.WIC.Bitmap descBmp = null;
+
+            fixed(byte* pBff = bff)
             {
-                srcBmp = DDS.LoadImage(resource);
-            }
-
-            SharpDX.WIC.Bitmap descBmp =null;
-
-            unsafe
-            {
-
-                Color4Byte[] aColor = new Color4Byte[srcBmp.Width*srcBmp.Height];
-                Color4Byte c = new Color4Byte();
-                var srcLockBmp = srcBmp.LockBits(
-                    new System.Drawing.Rectangle(0, 0, srcBmp.Width, srcBmp.Height),
-                    ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-                byte* pSrc = (byte*)srcLockBmp.Scan0;
-                for (int i = 0; i < srcBmp.Height; ++i)
-                {
-                    for (int j = 0, k; j < srcBmp.Width; ++j)
-                    {
-                        k = (i * srcBmp.Width + j)*4;
-                        c.Red   = pSrc[k + 2];
-                        c.Green = pSrc[k + 1];
-                        c.Blue  = pSrc[k + 0];
-                        c.Alpha = pSrc[k + 3];
-                        aColor[(i * srcBmp.Width) + j] = c;
-                    }
-                }
-                srcBmp.UnlockBits(srcLockBmp);
-                descBmp = SharpDX.WIC.Bitmap.New(
+                descBmp = new SharpDX.WIC.Bitmap(
                     factory,
-                    srcBmp.Width, srcBmp.Height,
+                    (int)si.MetaData.width, (int)si.MetaData.height,
                     SharpDX.WIC.PixelFormat.Format32bppPRGBA,
-                    aColor);
+                    new DataRectangle((IntPtr)pBff, (int)si.MetaData.width*4));
             }
 
             return descBmp;

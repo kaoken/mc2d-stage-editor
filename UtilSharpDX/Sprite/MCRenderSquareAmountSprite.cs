@@ -503,7 +503,7 @@ namespace UtilSharpDX.Sprite
             // プライオリティー
             //-----------------------------------------------------
             // 
-            if (draw.D2No == (int)MC_DCPRIORITY.D2NO_MAX)
+            if (draw.DrawCommandPriority.D2No == MCDrawCommandPriority.D2NO_MAX)
             {
                 draw.D2No = m_autoPpriorityNo++;
             }

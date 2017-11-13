@@ -11,6 +11,8 @@ namespace UtilSharpDX.Sprite
     /// </summary>
     public abstract class MCDrawSpriteBase : MCDrawBase
     {
+        public static readonly int AutoSpriteNo = (int)MCDrawCommandPriority.D2NO_MAX;
+
         /// <summary>
         /// ビルボード
         /// </summary>

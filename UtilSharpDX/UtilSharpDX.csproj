@@ -11,6 +11,7 @@
     <AssemblyName>UtilSharpDX</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,10 +34,17 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DDSReader">
-      <HintPath>..\..\..\lib\C#\dds-reader-master\DDSReader\bin\Release\DDSReader.dll</HintPath>
+    <Reference Include="DirectXTexInterfaces">
+      <HintPath>..\dll\x86\DirectXTexInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectXTexNet">
+      <HintPath>..\dll\x86\DirectXTexNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectXTexNetImpl">
+      <HintPath>..\dll\x86\DirectXTexNetImpl.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
@@ -216,6 +225,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DrawingCommand\SimpleDC\Resource\sprite.cfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -225,7 +235,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DrawingCommand\Default\Resource\test.txt" />
     <EmbeddedResource Include="Controls\ImageViwerContrl.resx">
       <DependentUpon>ImageViwerContrl.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +247,9 @@
     <EmbeddedResource Include="DrawingCommand\Default\Resource\sharedLight.hlsl" />
     <EmbeddedResource Include="DrawingCommand\Default\Resource\sharedSkin.hlsl" />
     <EmbeddedResource Include="DrawingCommand\Default\Resource\sprite.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\SimpleDC\Resource\common.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\SimpleDC\Resource\d2mapchip.hlsl" />
+    <EmbeddedResource Include="DrawingCommand\SimpleDC\Resource\sprite.hlsl" />
     <Content Include="Regex.txt" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

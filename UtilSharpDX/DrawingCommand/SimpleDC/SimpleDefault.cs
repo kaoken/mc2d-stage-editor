@@ -73,7 +73,7 @@ namespace UtilSharpDX.DrawingCommand.SimpleDC
             m_isCreated = true;
             //=====================================
             // HLSLファイルを読み込む
-            if (SetCreateEffectFromResource("UtilSharpDX.DrawingCommand.Default.Resource", HLSL_FILE) != 0)
+            if (SetCreateEffectFromResource("UtilSharpDX.DrawingCommand.SimpleDC.Resource", HLSL_FILE) != 0)
                 return -1;
 
 
@@ -122,12 +122,12 @@ namespace UtilSharpDX.DrawingCommand.SimpleDC
         /// <returns>通常、エラーが発生しなかった場合は 0 を返す。</returns>
         internal override int OnCheckChangeTechnique(MCDrawBase db)
         {
-            if (db.GetPriority().Technique >= (ulong)MC_DCPRIORITY.TECHNIC_MAX)
+            if (db.DrawCommandPriority.Technique >= MCDrawCommandPriority.TECHNIC_MAX)
             {
                 return 0;
             }
 
-            SetCurrentTechnicNo((int)db.GetPriority().Technique);
+            SetCurrentTechnicNo((int)db.DrawCommandPriority.Technique);
 
             return 0;
         }
