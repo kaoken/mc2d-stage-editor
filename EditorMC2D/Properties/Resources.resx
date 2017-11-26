@@ -178,9 +178,6 @@
   <data name="Arrow_UndoRevertRestore_16xLG_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrow_UndoRevertRestore_16xLG_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ascii_dbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ascii_dbg.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BookmarkDisable_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BookmarkDisable_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -373,12 +370,6 @@
   <data name="FileError_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileError_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="film" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\film.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FolderBrowserDialogControl_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FolderBrowserDialogControl_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -487,12 +478,6 @@
   <data name="Image_16xSM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image_16xSM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_cultured" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_cultured.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_modernist" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_modernist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="InfoTooltip_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InfoTooltip_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -504,12 +489,6 @@
   </data>
   <data name="layers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layout_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout_content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layout_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LinkedFolderOpen_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LinkedFolderOpen_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -537,15 +516,6 @@
   </data>
   <data name="Media_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Media_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="movie_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\movie_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="movie_blue_film_strip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\movie_blue_film_strip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="movie_blue_film_strip_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\movie_blue_film_strip_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewImageType_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewImageType_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -595,12 +565,6 @@
   <data name="Pause_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pause_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picture_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picture_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PipeFolderOpen_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PipeFolderOpen_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -609,12 +573,6 @@
   </data>
   <data name="Plan_8x_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plan_8x_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Play1Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Play1Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Play1Hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Play1Hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayVideo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayVideo_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -688,9 +646,6 @@
   <data name="shape_square" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shape_square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shape_square_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shape_square_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ShowAllFiles_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShowAllFiles_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -708,12 +663,6 @@
   </data>
   <data name="square_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\square_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stop1Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stop1Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stop1NormalBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stop1NormalBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tab_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tab_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

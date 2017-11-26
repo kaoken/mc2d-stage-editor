@@ -11,6 +11,7 @@ using System;
 using MC2DUtil.graphics;
 using System.Drawing.Imaging;
 using TileStageFormat;
+using EditorMC2D.Forms;
 
 namespace EditorMC2D.Docking
 {
@@ -21,10 +22,15 @@ namespace EditorMC2D.Docking
         /// </summary>
         private enum TreeImageIndex
         {
+            /// <summary> ソリューション </summary>
             Solution,
+            /// <summary> フォルダー </summary>
             FolderApp,
+            /// <summary> タイル群 APP </summary>
             TileApp,
+            /// <summary> フォルダー閉じた状態 </summary>
             FolderClose,
+            /// <summary> フォルダー 開いた状態 </summary>
             FolderOpen,
             ImageFile,
             ModuleFile,
@@ -71,14 +77,23 @@ namespace EditorMC2D.Docking
             CGFile,
             GLSLFile,
             GLSESFile,
+            /// <summary> HLSLファイル </summary>
             HLSLFile,
+            /// <summary> AngelScriptファイル </summary>
             ScriptFile,
+            /// <summary> フォントファイル </summary>
             FontFile,
+            /// <summary> タイル群開始 </summary>
             TileRoot,
+            /// <summary> RECTタイル </summary>
             Rect,
+            /// <summary> アイソメトリック・タイル </summary>
             Isometric,
+            /// <summary> ヘキサゴン・タイル </summary>
             Hexagon,
+            /// <summary> スクエア・タイル </summary>
             Square,
+            /// <summary> 短径アニメーション </summary>
             RectAnm,
             TileAnm,
             MapRoot,
@@ -325,7 +340,7 @@ namespace EditorMC2D.Docking
         /// <summary>
         /// ツリービューの初期化
         /// </summary>
-        private void treeView_Init()
+        private void TreeViewInit()
         {
             this.treeView.Nodes.Clear();
             m_nodeInfos.Clear();
@@ -806,6 +821,11 @@ namespace EditorMC2D.Docking
                             addMI.Visible = false;
                             contextMenu.Show(point);
                             break;
+                        // タイル
+                        case ItemKind.Square:
+                            addMI.Visible = false;
+                            cmImgTileCreate.Show(point);
+                            break;
                     }
 
                 }
@@ -1011,8 +1031,14 @@ namespace EditorMC2D.Docking
                     break;
                 case "openExplorerMI":
                     break;
+                case "createSquareImgTiles":
+                    // スクエアタイルイメージの作成
+                    var a = new AddSquareImage();
+                    a.ShowDialog();
+                    break;
             }
         }
+
 
 
 
@@ -1049,7 +1075,7 @@ namespace EditorMC2D.Docking
         /// <param name="e"></param>
         public void ProjectOpened(object sender, ProjectOpenedEventArgs e)
         {
-            treeView_Init();
+            TreeViewInit();
 
             string path = m_com.DirPathMC2D + @"\" + MediaDir.Media + @"\";
 
@@ -1120,7 +1146,7 @@ namespace EditorMC2D.Docking
         {
             // ツリービュー
             treeView.Sorted = true;	// ※文字列順に自動Sortします。
-            treeView_Init();
+            TreeViewInit();
         }
         #endregion
 

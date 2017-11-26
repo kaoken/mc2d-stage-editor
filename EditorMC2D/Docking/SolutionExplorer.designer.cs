@@ -63,8 +63,11 @@
             this.propertyMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmImgTileCreate = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createSquareImgTiles = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.contextMenu.SuspendLayout();
+            this.cmImgTileCreate.SuspendLayout();
             this.SuspendLayout();
             // 
             // topToolBar
@@ -357,6 +360,21 @@
             this.toolStripMenuItem4.Text = "ANSファイル";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.TNMenuClick);
             // 
+            // cmImgTileCreate
+            // 
+            this.cmImgTileCreate.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createSquareImgTiles});
+            this.cmImgTileCreate.Name = "cmImgTileCreate";
+            this.cmImgTileCreate.Size = new System.Drawing.Size(190, 48);
+            // 
+            // createSquareImgTiles
+            // 
+            this.createSquareImgTiles.Image = global::EditorMC2D.Properties.Resources.square_16x;
+            this.createSquareImgTiles.Name = "createSquareImgTiles";
+            this.createSquareImgTiles.Size = new System.Drawing.Size(189, 22);
+            this.createSquareImgTiles.Text = "イメージ・タイル群の作成";
+            this.createSquareImgTiles.Click += new System.EventHandler(this.TNMenuClick);
+            // 
             // SolutionExplorerDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -375,6 +393,7 @@
             this.Load += new System.EventHandler(this.SolutionExplorerDoc_Load);
             this.panel1.ResumeLayout(false);
             this.contextMenu.ResumeLayout(false);
+            this.cmImgTileCreate.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +433,7 @@
         private System.Windows.Forms.ToolStripMenuItem openMI;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.ContextMenuStrip cmImgTileCreate;
+        private System.Windows.Forms.ToolStripMenuItem createSquareImgTiles;
     }
 }

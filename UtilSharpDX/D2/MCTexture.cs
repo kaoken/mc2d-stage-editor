@@ -1,19 +1,15 @@
-﻿using SharpDX;
-using SharpDX.Direct2D1;
+﻿using DirectXTexNet;
+using MC2DUtil;
+using SharpDX;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
-using UtilSharpDX.Exceptions;
-using MC2DUtil;
-using SharpDX.IO;
 using SharpDX.WIC;
 using System;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
-using Imaging.DDSReader;
-using System.Drawing.Imaging;
-using SharpDX.Mathematics.Interop;
-using DirectXTexNet;
+using UtilSharpDX.Exceptions;
 
 namespace UtilSharpDX.D2
 {

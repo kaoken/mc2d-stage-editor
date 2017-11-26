@@ -453,7 +453,7 @@
             // 
             // objMNCreateChip
             // 
-            this.objMNCreateChip.Image = global::EditorMC2D.Properties.Resources.shape_square_edit;
+            this.objMNCreateChip.Image = global::EditorMC2D.Properties.Resources.square_16x;
             this.objMNCreateChip.Name = "objMNCreateChip";
             this.objMNCreateChip.Size = new System.Drawing.Size(204, 22);
             this.objMNCreateChip.Text = "新規アニメーションチップ作成";

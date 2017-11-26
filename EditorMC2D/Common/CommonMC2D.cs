@@ -198,8 +198,8 @@ namespace EditorMC2D.Common
         /// <returns>ビットマップ</returns>
         public static Bitmap GetImageChipBitmap(ImageSquareTile tlImgF, Image rImg, int tileNo, int flag)
         {
-            int x = tileNo % tlImgF.blockX;
-            int y = tileNo / tlImgF.blockX;
+            int x = tileNo % tlImgF.length;
+            int y = tileNo / tlImgF.length;
             Rectangle rc = new Rectangle(x * 40, y * 40, 40, 40);
             return GetImageChipBitmap(rImg, rc, flag);
         }

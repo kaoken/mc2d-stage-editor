@@ -126,6 +126,12 @@
     <Compile Include="Controls\ImageViwerContrl.Designer.cs">
       <DependentUpon>ImageViwerContrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SquareTilesImageControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SquareTilesImageControl.Designer.cs">
+      <DependentUpon>SquareTilesImageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="D2\MCImageMgr.cs" />
     <Compile Include="D2\MCPrintScreenTexture.cs" />
     <Compile Include="D2\MCTexture.cs" />

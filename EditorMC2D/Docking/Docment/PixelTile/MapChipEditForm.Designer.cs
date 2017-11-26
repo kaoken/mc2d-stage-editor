@@ -447,7 +447,7 @@
             // objRBChipAnm
             // 
             this.objRBChipAnm.Appearance = System.Windows.Forms.Appearance.Button;
-            this.objRBChipAnm.BackgroundImage = global::EditorMC2D.Properties.Resources.movie_blue_film_strip;
+            this.objRBChipAnm.BackgroundImage = global::EditorMC2D.Properties.Resources.Plan_8x_16x;
             this.objRBChipAnm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.objRBChipAnm.Location = new System.Drawing.Point(41, 13);
             this.objRBChipAnm.Name = "objRBChipAnm";
@@ -460,7 +460,7 @@
             // objRBChip
             // 
             this.objRBChip.Appearance = System.Windows.Forms.Appearance.Button;
-            this.objRBChip.BackgroundImage = global::EditorMC2D.Properties.Resources.picture;
+            this.objRBChip.BackgroundImage = global::EditorMC2D.Properties.Resources.ColorPicker_16x;
             this.objRBChip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.objRBChip.Checked = true;
             this.objRBChip.Location = new System.Drawing.Point(6, 13);
@@ -988,7 +988,7 @@
             // objRBxRPxChipAnm
             // 
             this.objRBxRPxChipAnm.Appearance = System.Windows.Forms.Appearance.Button;
-            this.objRBxRPxChipAnm.BackgroundImage = global::EditorMC2D.Properties.Resources.movie_blue_film_strip;
+            this.objRBxRPxChipAnm.BackgroundImage = global::EditorMC2D.Properties.Resources.PlayVideo_16x;
             this.objRBxRPxChipAnm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.objRBxRPxChipAnm.Location = new System.Drawing.Point(41, 13);
             this.objRBxRPxChipAnm.Name = "objRBxRPxChipAnm";
@@ -1001,7 +1001,7 @@
             // objRBxRPxChip
             // 
             this.objRBxRPxChip.Appearance = System.Windows.Forms.Appearance.Button;
-            this.objRBxRPxChip.BackgroundImage = global::EditorMC2D.Properties.Resources.picture;
+            this.objRBxRPxChip.BackgroundImage = global::EditorMC2D.Properties.Resources.ImageMap_16x;
             this.objRBxRPxChip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.objRBxRPxChip.Checked = true;
             this.objRBxRPxChip.Location = new System.Drawing.Point(6, 13);

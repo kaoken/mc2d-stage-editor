@@ -11,7 +11,7 @@ namespace TileStageFormat.Tile.Square
     {
         /// <summary>FImageSquareTileを表すID</summary>
         public static ulong ID { get { return CreateID8('I', 'S', 'T'); } }
-        public const int SIZE = 144;
+        public const int SIZE = 140;
 
         /// <summary>
         /// この構造体を表す一意なID
@@ -32,10 +32,9 @@ namespace TileStageFormat.Tile.Square
         public override void Read(UtilFile f)
         {
             f.ReadByte(szName, 0, szName.Length);
+            length = f.ReadInt();
             width = f.ReadInt();
             height = f.ReadInt();
-            tileWidht = f.ReadInt();
-            tileHeight = f.ReadInt();
         }
 
         /// <summary>
@@ -45,10 +44,9 @@ namespace TileStageFormat.Tile.Square
         public override void Write(UtilFile f)
         {
             f.WriteByte(szName);
+            //f.WriteInt(lenght);
             f.WriteInt(width);
             f.WriteInt(height);
-            f.WriteInt(tileWidht);
-            f.WriteInt(tileHeight);
         }
     }
 }

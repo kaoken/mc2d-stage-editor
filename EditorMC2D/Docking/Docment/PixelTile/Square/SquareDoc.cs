@@ -8,13 +8,14 @@ using System.Drawing.Imaging;
 using System.Windows.Forms;
 using TileStageFormat.Tile.Square;
 using WeifenLuo.WinFormsUI.Docking;
+using UtilSharpDX.Math;
 
 namespace EditorMC2D.Document.PixelTile
 {
 
     /// <summary>
     /// </summary>
-    /// <remarks>マップチップ一つ一つの情報を入力するためのもの</remarks>
+    /// <remarks>タイル一つ一つの情報を入力するためのもの</remarks>
     public partial class SquareDoc : DockContent
     {
         public EventHandler CloseFormEvent;
@@ -35,7 +36,7 @@ namespace EditorMC2D.Document.PixelTile
             hScrollBar.Minimum = 0;  //最小値の設定
             hScrollBar.LargeChange = 40; //バーと左右端の矢印の間をクリックした場合の移動量
             hScrollBar.SmallChange = 10; //左右端の矢印をクリックした場合の移動量
-            m_objMapchipFlg.SelectedIndex = m_currentTileFlgNo;
+            //lvTileFlags.SelectedIndex = m_currentTileFlgNo;
         }
         /// <summary>
         /// 
@@ -165,7 +166,7 @@ namespace EditorMC2D.Document.PixelTile
         /// <param name="e"></param>
         private void MapChipInfoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            lvCollisionFlags.Items.Clear();
+            lvColliFlag.Items.Clear();
             lvTileFlags.Items.Clear();
             CloseFormEvent(this,e);
         }
@@ -179,9 +180,9 @@ namespace EditorMC2D.Document.PixelTile
 
             if (m_currentTileFlgNo == 0)
             {
-                for(int i = 0; i < lvCollisionFlags.Items.Count; ++i)
+                for(int i = 0; i < lvColliFlag.Items.Count; ++i)
                 {
-                    if( lvCollisionFlags.Items[i].Checked)
+                    if( lvColliFlag.Items[i].Checked)
                     {
                         collisionTargetFlgs += (ushort)(1 << i);
                     }
@@ -455,15 +456,15 @@ namespace EditorMC2D.Document.PixelTile
                 obj.Checked = false;
         }
         /// <summary>
-        /// マップチップフラグの切り替え
+        /// タイルフラグの切り替え
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void m_objMapchipFlg_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvTileFlags_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (m_rImgaeFile == null) return;
-            if( m_currentTileFlgNo != m_objMapchipFlg.SelectedIndex )
-                m_currentTileFlgNo = m_objMapchipFlg.SelectedIndex;
+            //if( m_currentTileFlgNo != lvTileFlags.SelectedIndex )
+            //    m_currentTileFlgNo = lvTileFlags.SelectedIndex;
 
 
             ushort collisionTargetFlgs = m_rImgaeFile.tileInfos[m_currentChipNo].collisionTargetFlgs;
@@ -494,7 +495,7 @@ namespace EditorMC2D.Document.PixelTile
         /// <param name="e"></param>
         private void m_btnColliAllUncheck_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lvCollisionFlags.Items.Count; ++i)
+            for (int i = 0; i < lvColliFlag.Items.Count; ++i)
             {
                 lvTileFlags.Items[i].Checked = false;
             }
@@ -506,13 +507,103 @@ namespace EditorMC2D.Document.PixelTile
         /// <param name="e"></param>
         private void m_btnColliAllCheck_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lvCollisionFlags.Items.Count; ++i)
+            for (int i = 0; i < lvColliFlag.Items.Count; ++i)
             {
                 lvTileFlags.Items[i].Checked = true;
             }
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridToggle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CollisionToggle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// スクロールバーの変更
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ScrollBar_ValueChanged(object sender, EventArgs e)
+        {
+            if (squareTilesImgCtrl == null) return;
+            squareTilesImgCtrl.CameraRangePosition = new MCVector2(
+                hScrollBar.Value / (float)(1 + hScrollBar.Maximum - hScrollBar.LargeChange),
+                vScrollBar.Value / (float)(1 + vScrollBar.Maximum - vScrollBar.LargeChange));
+#if DEBUG
+            var p = squareTilesImgCtrl.CameraPosition;
+            //LBScreenSize.Text = ClientSize.Width + "×" + ClientSize.Height + "--" + p.X + "×" + p.Y;
+
+#endif
+        }
+
+        /// <summary>
+        /// 読み込み画像のα値
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAlpha_Click(object sender, EventArgs e)
+        {
+            //squareTilesImgCtrl.IsAlpha = BtnAlpha.Checked;
+            //BtnAlpha.Checked = !BtnAlpha.Checked;
+            //if (BtnAlpha.Checked)
+            //    BtnAlpha.BackColor = SystemColors.ActiveCaption;
+            //else
+            //    BtnAlpha.BackColor = SystemColors.Control;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void DocumentFocus(Object sender, EventArgs e)
+        {
+            //if (DocumentFocusEvent != null)
+            //    DocumentFocusEvent(this, new DocumentFocusEventArgs(this));
+        }
+
+        /// <summary>
+        /// アクティブで無い
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SquareDocDeactivate(object sender, EventArgs e)
+        {
+            squareTilesImgCtrl.IsActive = false;
+        }
+
+        /// <summary>
+        /// アクティブになった
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SquareDocActivated(object sender, EventArgs e)
+        {
+            squareTilesImgCtrl.IsActive = true;
+        }
+
+        private void squareTilesImgCtrl_Click(object sender, EventArgs e)
         {
 
         }

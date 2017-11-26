@@ -287,6 +287,18 @@
     <Compile Include="FormImageRectMap\ImageRectMapForm.Designer.cs">
       <DependentUpon>ImageRectMapForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddSquareImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSquareImage.Designer.cs">
+      <DependentUpon>AddSquareImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageList.Designer.cs">
+      <DependentUpon>ImageList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,16 +350,16 @@
     <Compile Include="Option\TextEditer\TextConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Docking\SolutionExplorer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Docking\SolutionExplorer.designer.cs">
       <DependentUpon>SolutionExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
@@ -436,6 +448,12 @@
     <EmbeddedResource Include="FormImageRectMap\ImageRectMapForm.resx">
       <DependentUpon>ImageRectMapForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSquareImage.resx">
+      <DependentUpon>AddSquareImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageList.resx">
+      <DependentUpon>ImageList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,652 +504,634 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2x_16x.png" />
+    <EmbeddedResource Include="Resources\2x_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\6x_16x.png" />
+    <EmbeddedResource Include="Resources\6x_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\8x_16x.png" />
+    <EmbeddedResource Include="Resources\8x_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\256x256_bg.bmp" />
+    <EmbeddedResource Include="Resources\256x256_bg.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\action_add_16xMD.png" />
+    <EmbeddedResource Include="Resources\action_add_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\action_Cancel_16xLG.png" />
+    <EmbeddedResource Include="Resources\action_Cancel_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\action_create_16xLG.png" />
+    <EmbeddedResource Include="Resources\action_create_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AddControl_16x.png" />
+    <EmbeddedResource Include="Resources\AddControl_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AddFile_16x.png" />
+    <EmbeddedResource Include="Resources\AddFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AddFolder_16x.png" />
+    <EmbeddedResource Include="Resources\AddFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AnmRectangle_16x.png" />
+    <EmbeddedResource Include="Resources\AnmRectangle_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AnmTile_16xLG.png" />
+    <EmbeddedResource Include="Resources\AnmTile_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\application_16xLG.png" />
+    <EmbeddedResource Include="Resources\application_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_c_c.png" />
+    <EmbeddedResource Include="Resources\arrow_c_c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_c_l.png" />
+    <EmbeddedResource Include="Resources\arrow_c_l.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_c_r.png" />
+    <EmbeddedResource Include="Resources\arrow_c_r.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_down_c.png" />
+    <EmbeddedResource Include="Resources\arrow_down_c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_down_l.png" />
+    <EmbeddedResource Include="Resources\arrow_down_l.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_down_r.png" />
+    <EmbeddedResource Include="Resources\arrow_down_r.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Arrow_RedoRetry_16xLG_color.png" />
+    <EmbeddedResource Include="Resources\Arrow_RedoRetry_16xLG_color.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_top_c.png" />
+    <EmbeddedResource Include="Resources\arrow_top_c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_top_l.png" />
+    <EmbeddedResource Include="Resources\arrow_top_l.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow_top_r.png" />
+    <EmbeddedResource Include="Resources\arrow_top_r.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Arrow_UndoRevertRestore_16xLG_color.png" />
+    <EmbeddedResource Include="Resources\Arrow_UndoRevertRestore_16xLG_color.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ascii_dbg.bmp" />
+    <EmbeddedResource Include="Resources\ascii_dbg.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_001_16xSM.png" />
+    <EmbeddedResource Include="Resources\bookmark_001_16xSM.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_001_16xSM_debugger.png" />
+    <EmbeddedResource Include="Resources\bookmark_001_16xSM_debugger.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_002_16xMD.png" />
+    <EmbeddedResource Include="Resources\bookmark_002_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_002_16xMD_debugger.png" />
+    <EmbeddedResource Include="Resources\bookmark_002_16xMD_debugger.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_003_16xLG.png" />
+    <EmbeddedResource Include="Resources\bookmark_003_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_003_16xLG_debugger.png" />
+    <EmbeddedResource Include="Resources\bookmark_003_16xLG_debugger.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_004_16xSM.png" />
+    <EmbeddedResource Include="Resources\bookmark_004_16xSM.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_005_16xMD.png" />
+    <EmbeddedResource Include="Resources\bookmark_005_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark_006_16xLG.png" />
+    <EmbeddedResource Include="Resources\bookmark_006_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Bookmark_16x.png" />
+    <EmbeddedResource Include="Resources\Bookmark_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BookmarkDisable_16x.png" />
+    <EmbeddedResource Include="Resources\BookmarkDisable_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BookmarkGroupDisable_16x.png" />
+    <EmbeddedResource Include="Resources\BookmarkGroupDisable_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BookmarkHorizontal_16x.png" />
+    <EmbeddedResource Include="Resources\BookmarkHorizontal_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BookmarkMainMenuTabItem_16x.png" />
+    <EmbeddedResource Include="Resources\BookmarkMainMenuTabItem_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakConnection_16x.png" />
+    <EmbeddedResource Include="Resources\BreakConnection_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\breakpoint_Off_16xLG.png" />
+    <EmbeddedResource Include="Resources\breakpoint_Off_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointAdvance_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointAdvance_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointAdvanceDisable_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointAdvanceDisable_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointBound_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointBound_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointConditional_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointConditional_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointDisable_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointDisable_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointDisable_16xMD.png" />
+    <EmbeddedResource Include="Resources\BreakpointDisable_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointDisable_16xSM.png" />
+    <EmbeddedResource Include="Resources\BreakpointDisable_16xSM.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointDisabledXHR_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointDisabledXHR_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointEnable_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointEnable_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointEnable_16xMD.png" />
+    <EmbeddedResource Include="Resources\BreakpointEnable_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointEnable_16xSM.png" />
+    <EmbeddedResource Include="Resources\BreakpointEnable_16xSM.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointEnable_Grey_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointEnable_Grey_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointEnabled_16xLG.png" />
+    <EmbeddedResource Include="Resources\BreakpointEnabled_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointError_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointError_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointUnbound_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointUnbound_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointUnboundXHR_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointUnboundXHR_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointWindow_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointWindow_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BreakpointXHR_16x.png" />
+    <EmbeddedResource Include="Resources\BreakpointXHR_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Building_16xLG.png" />
+    <EmbeddedResource Include="Resources\Building_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cancel_16x.png" />
+    <EmbeddedResource Include="Resources\Cancel_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Close_16xLG.png" />
+    <EmbeddedResource Include="Resources\Close_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CloudFolder_16x.png" />
+    <EmbeddedResource Include="Resources\CloudFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CloudFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\CloudFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CollapseGroup_16x.png" />
+    <EmbeddedResource Include="Resources\CollapseGroup_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CollapseGroup_inverse_16x.png" />
+    <EmbeddedResource Include="Resources\CollapseGroup_inverse_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\colli_chip.bmp" />
+    <EmbeddedResource Include="Resources\colli_chip.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ColorPalette_16x.png" />
+    <EmbeddedResource Include="Resources\ColorPalette_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ColorPicker_16x.png" />
+    <EmbeddedResource Include="Resources\ColorPicker_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ColorWheel_16x.png" />
+    <EmbeddedResource Include="Resources\ColorWheel_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ConnectedServiceReferenceFolder_16x.png" />
+    <EmbeddedResource Include="Resources\ConnectedServiceReferenceFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ConnectedServiceReferenceFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\ConnectedServiceReferenceFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Copy_16x.png" />
+    <EmbeddedResource Include="Resources\Copy_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CPPFile_16x.PNG" />
+    <EmbeddedResource Include="Resources\CPPFile_16x.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentContextArrowIcon_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentContextArrowIcon_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentInstructionPointer_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentInstructionPointer_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentInstructionPointer_white_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentInstructionPointer_white_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentInstructionPointerPause_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentInstructionPointerPause_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentInstructionPointerStop_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentInstructionPointerStop_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CurrentLocationArrowIcon_16x.png" />
+    <EmbeddedResource Include="Resources\CurrentLocationArrowIcon_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cut_16x.png" />
+    <EmbeddedResource Include="Resources\Cut_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DeleteFolder_16x.png" />
+    <EmbeddedResource Include="Resources\DeleteFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DirectX3D_16x.png" />
+    <EmbeddedResource Include="Resources\DirectX3D_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Editor_16x.png" />
+    <EmbeddedResource Include="Resources\Editor_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EditorWarning_16x.png" />
+    <EmbeddedResource Include="Resources\EditorWarning_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ErrorTypeFolder_16x.png" />
+    <EmbeddedResource Include="Resources\ErrorTypeFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ExpandAll_16x.png" />
+    <EmbeddedResource Include="Resources\ExpandAll_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eye_16xLG.png" />
+    <EmbeddedResource Include="Resources\eye_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FileError_16x.png" />
+    <EmbeddedResource Include="Resources\FileError_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\film.png" />
+    <EmbeddedResource Include="Resources\folder_Closed_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\find.png" />
+    <EmbeddedResource Include="Resources\folder_Open_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder_Closed_16xLG.png" />
+    <EmbeddedResource Include="Resources\FolderBrowserDialogControl_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder_Open_16xLG.png" />
+    <EmbeddedResource Include="Resources\FolderError_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderBrowserDialogControl_16x.png" />
+    <EmbeddedResource Include="Resources\FolderInformation_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderError_16x.png" />
+    <EmbeddedResource Include="Resources\FolderOffline_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderInformation_16x.png" />
+    <EmbeddedResource Include="Resources\FolderOpenWarning_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderOffline_16x.png" />
+    <EmbeddedResource Include="Resources\FolderSuppressed_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderOpenWarning_16x.png" />
+    <EmbeddedResource Include="Resources\FolderTopPanel_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderSuppressed_16x.png" />
+    <EmbeddedResource Include="Resources\FolderWarning_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderTopPanel_16x.png" />
+    <EmbeddedResource Include="Resources\Font_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FolderWarning_16x.png" />
+    <EmbeddedResource Include="Resources\FRAME.BMP" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Font_16x.png" />
+    <EmbeddedResource Include="Resources\FRAME_CO.BMP" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FRAME.BMP" />
+    <EmbeddedResource Include="Resources\FRAME_DE.BMP" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FRAME_CO.BMP" />
+    <EmbeddedResource Include="Resources\FRAME_ED.BMP" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FRAME_DE.BMP" />
+    <EmbeddedResource Include="Resources\FRAMEBAC.BMP" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FRAME_ED.BMP" />
+    <EmbeddedResource Include="Resources\Graphics3D_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FRAMEBAC.BMP" />
+    <EmbeddedResource Include="Resources\grid_Data_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Graphics3D_16x.png" />
+    <EmbeddedResource Include="Resources\GridLight_exp_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\grid_Data_16xLG.png" />
+    <EmbeddedResource Include="Resources\GridToggle_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GridLight_exp_16x.png" />
+    <EmbeddedResource Include="Resources\gura.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GridToggle_16xLG.png" />
+    <EmbeddedResource Include="Resources\hexagon_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gura.bmp" />
+    <EmbeddedResource Include="Resources\Home_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hexagon_16x.png" />
+    <EmbeddedResource Include="Resources\house_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Home_16x.png" />
+    <EmbeddedResource Include="Resources\icon1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house_16xLG.png" />
+    <EmbeddedResource Include="Resources\Image_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon1.ico" />
+    <EmbeddedResource Include="Resources\Image_16X12.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image_16x.png" />
+    <EmbeddedResource Include="Resources\Image_16xMD.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image_16X12.png" />
+    <EmbeddedResource Include="Resources\Image_16xSM.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image_16xMD.png" />
+    <EmbeddedResource Include="Resources\image_cultured.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image_16xSM.png" />
+    <EmbeddedResource Include="Resources\image_modernist.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image_cultured.png" />
+    <EmbeddedResource Include="Resources\ImageBrowser_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image_modernist.png" />
+    <EmbeddedResource Include="Resources\ImageButton_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageBrowser_16x.png" />
+    <EmbeddedResource Include="Resources\ImageChisel_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageButton_16x.png" />
+    <EmbeddedResource Include="Resources\ImageGroup_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageChisel_16x.png" />
+    <EmbeddedResource Include="Resources\ImageMap_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageGroup_16x.png" />
+    <EmbeddedResource Include="Resources\ImageMapFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageMap_16x.png" />
+    <EmbeddedResource Include="Resources\ImageStack_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageMapFile_16x.png" />
+    <EmbeddedResource Include="Resources\InfoTooltip_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageStack_16x.png" />
+    <EmbeddedResource Include="Resources\InsertLayer_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\InfoTooltip_16xLG.png" />
+    <EmbeddedResource Include="Resources\Isometric_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\InsertLayer_16x.png" />
+    <EmbeddedResource Include="Resources\layers.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Isometric_16x.png" />
+    <EmbeddedResource Include="Resources\layout_content.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layers.png" />
+    <EmbeddedResource Include="Resources\layout_edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layout_content.png" />
+    <EmbeddedResource Include="Resources\LinkedFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layout_edit.png" />
+    <EmbeddedResource Include="Resources\LinkedFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LinkedFolder_16x.png" />
+    <EmbeddedResource Include="Resources\ListFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LinkedFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\ListFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ListFolder_16x.png" />
+    <EmbeddedResource Include="Resources\map.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ListFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\map_go.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\map.png" />
+    <EmbeddedResource Include="Resources\MapTileLayer_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\map_go.png" />
+    <EmbeddedResource Include="Resources\Mc2d_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MapTileLayer_16x.png" />
+    <EmbeddedResource Include="Resources\Media_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Mc2d_16x.png" />
+    <EmbeddedResource Include="Resources\movie_blue.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Media_16x.png" />
+    <EmbeddedResource Include="Resources\NewImageType_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\movie_blue.png" />
+    <EmbeddedResource Include="Resources\NewItem_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\movie_blue_film_strip.png" />
+    <EmbeddedResource Include="Resources\NewSolutionFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\movie_blue_film_strip_g.png" />
+    <EmbeddedResource Include="Resources\NewSoundFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewImageType_16x.png" />
+    <EmbeddedResource Include="Resources\NextBookmark_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewItem_16x.png" />
+    <EmbeddedResource Include="Resources\NextBookmarkFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewSolutionFolder_16x.png" />
+    <EmbeddedResource Include="Resources\NextBookmarkFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewSoundFile_16x.png" />
+    <EmbeddedResource Include="Resources\Open_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NextBookmark_16x.png" />
+    <EmbeddedResource Include="Resources\OpenFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NextBookmarkFile_16x.png" />
+    <EmbeddedResource Include="Resources\openHexagon_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NextBookmarkFolder_16x.png" />
+    <EmbeddedResource Include="Resources\openIsometric_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Open_16x.png" />
+    <EmbeddedResource Include="Resources\openSquare_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OpenFolder_16x.png" />
+    <EmbeddedResource Include="Resources\PackageFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\openHexagon_16x.png" />
+    <EmbeddedResource Include="Resources\PackageFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\openIsometric_16x.png" />
+    <EmbeddedResource Include="Resources\Paste_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\openSquare_16x.png" />
+    <EmbeddedResource Include="Resources\Pause_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PackageFolder_16x.png" />
+    <EmbeddedResource Include="Resources\picture.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PackageFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\picture_go.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Paste_16x.png" />
+    <EmbeddedResource Include="Resources\PipeFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pause_16x.png" />
+    <EmbeddedResource Include="Resources\PipeFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\picture.png" />
+    <EmbeddedResource Include="Resources\Plan_8x_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\picture_go.png" />
+    <EmbeddedResource Include="Resources\PlayVideo_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PipeFolder_16x.png" />
+    <EmbeddedResource Include="Resources\PreviewTab_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PipeFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\PreviousBookmark_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Plan_8x_16x.png" />
+    <EmbeddedResource Include="Resources\PreviousBookmarkFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Play1Disabled.png" />
+    <EmbeddedResource Include="Resources\PreviousBookmarkFolder_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Play1Hot.png" />
+    <EmbeddedResource Include="Resources\ProjectFolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PlayVideo_16x.png" />
+    <EmbeddedResource Include="Resources\ProjectFolderOpen_exp_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PreviewTab_16x.png" />
+    <EmbeddedResource Include="Resources\Property_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PreviousBookmark_16x.png" />
+    <EmbeddedResource Include="Resources\Rectangle_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PreviousBookmarkFile_16x.png" />
+    <EmbeddedResource Include="Resources\Redo_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PreviousBookmarkFolder_16x.png" />
+    <EmbeddedResource Include="Resources\Refresh_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ProjectFolderOpen_16x.png" />
+    <EmbeddedResource Include="Resources\RotateLeft_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ProjectFolderOpen_exp_16x.png" />
+    <EmbeddedResource Include="Resources\RotateRight_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Property_16x.png" />
+    <EmbeddedResource Include="Resources\Run_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Rectangle_16x.png" />
+    <EmbeddedResource Include="Resources\Run_grey_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Redo_16x.png" />
+    <EmbeddedResource Include="Resources\RunPerformance_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Refresh_16x.png" />
+    <EmbeddedResource Include="Resources\save_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RotateLeft_16x.png" />
+    <EmbeddedResource Include="Resources\SaveAll_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RotateRight_16x.png" />
+    <EmbeddedResource Include="Resources\ScrollbarArrowsDownRight_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Run_16x.png" />
+    <EmbeddedResource Include="Resources\ScrollbarArrowsDownRight_noHalo1E_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Run_grey_16x.png" />
+    <EmbeddedResource Include="Resources\ScrollbarArrowsDownRight_noHaloWhite_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RunPerformance_16x.png" />
+    <EmbeddedResource Include="Resources\Select_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\save_16xLG.png" />
+    <EmbeddedResource Include="Resources\Settings_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SaveAll_16x.png" />
+    <EmbeddedResource Include="Resources\shape_square.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ScrollbarArrowsDownRight_16x.png" />
+    <EmbeddedResource Include="Resources\shape_square_edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ScrollbarArrowsDownRight_noHalo1E_16x.png" />
+    <EmbeddedResource Include="Resources\ShowAllFiles_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ScrollbarArrowsDownRight_noHaloWhite_16x.png" />
+    <EmbeddedResource Include="Resources\solution_16x.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Select_16x.png" />
+    <EmbeddedResource Include="Resources\solution_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Settings_16x.png" />
+    <EmbeddedResource Include="Resources\SoundFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\shape_square.png" />
+    <EmbeddedResource Include="Resources\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\shape_square_edit.png" />
+    <EmbeddedResource Include="Resources\square_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ShowAllFiles_16x.png" />
+    <EmbeddedResource Include="Resources\Stop1Disabled.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\solution_16x.ico" />
+    <EmbeddedResource Include="Resources\Stop1NormalBlue.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\solution_16x.png" />
+    <EmbeddedResource Include="Resources\Tab_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SoundFile_16x.png" />
+    <EmbeddedResource Include="Resources\Text_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SplashScreen.png" />
+    <EmbeddedResource Include="Resources\Undo_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\square_16x.png" />
+    <EmbeddedResource Include="Resources\upload.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Stop1Disabled.png" />
+    <EmbeddedResource Include="Resources\ViewFull_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Stop1NormalBlue.png" />
+    <EmbeddedResource Include="Resources\Virtual_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Tab_16xLG.png" />
+    <EmbeddedResource Include="Resources\VirtualMachine_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Text_16x.png" />
+    <EmbeddedResource Include="Resources\VirtualMachineError_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Undo_16x.png" />
+    <EmbeddedResource Include="Resources\VSO_FolderOpen_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\upload.png" />
+    <EmbeddedResource Include="Resources\VSO_RecycleBin_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ViewFull_16x.png" />
+    <EmbeddedResource Include="Resources\Win32Project_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Virtual_16x.png" />
+    <EmbeddedResource Include="Resources\WindowsForm_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VirtualMachine_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VirtualMachineError_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VSO_FolderOpen_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VSO_RecycleBin_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Win32Project_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WindowsForm_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1x_16x.png" />
+    <EmbeddedResource Include="Resources\1x_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docking\Docment\Map\" />
@@ -1140,52 +1140,52 @@
     <Folder Include="Docking\Docment\PixelTile\Isometric\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Output_16x.png" />
+    <EmbeddedResource Include="Resources\Output_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OutputGroup_16x.png" />
+    <EmbeddedResource Include="Resources\OutputGroup_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Output_16x.ico" />
+    <EmbeddedResource Include="Resources\Output_16x.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tree_close_arrow.png" />
+    <EmbeddedResource Include="Resources\tree_close_arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tree_open_arrow.png" />
+    <EmbeddedResource Include="Resources\tree_open_arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tree_close_arrow_dark.png" />
+    <EmbeddedResource Include="Resources\tree_close_arrow_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tree_open_arrow_dark.png" />
+    <EmbeddedResource Include="Resources\tree_open_arrow_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\StepIntoArrow_16x.png" />
-    <None Include="Resources\StepIn_16x.png" />
-    <None Include="Resources\StepOver_16x.png" />
-    <None Include="Resources\StepOutArrow_16x.png" />
-    <None Include="Resources\StepOut_16x.png" />
-    <None Include="Resources\Stop_16x.png" />
-    <None Include="Resources\TileApplication_16x.png" />
-    <None Include="Resources\AddItem_16x.png" />
-    <None Include="Resources\AssemblerSourceFile_16x.png" />
-    <None Include="Resources\cgFile_16x.png" />
+    <EmbeddedResource Include="Resources\StepIntoArrow_16x.png" />
+    <EmbeddedResource Include="Resources\StepIn_16x.png" />
+    <EmbeddedResource Include="Resources\StepOver_16x.png" />
+    <EmbeddedResource Include="Resources\StepOutArrow_16x.png" />
+    <EmbeddedResource Include="Resources\StepOut_16x.png" />
+    <EmbeddedResource Include="Resources\Stop_16x.png" />
+    <EmbeddedResource Include="Resources\TileApplication_16x.png" />
+    <EmbeddedResource Include="Resources\AddItem_16x.png" />
+    <EmbeddedResource Include="Resources\AssemblerSourceFile_16x.png" />
+    <EmbeddedResource Include="Resources\cgFile_16x.png" />
     <EmbeddedResource Include="Resources\BeginningDockPanel.xml" />
-    <None Include="Resources\ClearWindowContent_16x.png" />
-    <None Include="Resources\ClearBookmark_16x.png" />
-    <None Include="Resources\BuildErrorList_16x.png" />
-    <None Include="Resources\ClearBreakpointGroup_16x.png" />
-    <None Include="Resources\DeleteBreakpoint_16x.png" />
-    <Content Include="Resources\folder_lock_Closed_16xLG.png" />
-    <Content Include="Resources\folder_lock_Open_16xLG.png" />
-    <None Include="Resources\NewImage_16x.png" />
-    <None Include="Resources\RawCodeCoverageDataFile_16x.png" />
-    <None Include="Resources\glsesFile_16x.png" />
-    <None Include="Resources\glesFile_16x.png" />
-    <None Include="Resources\hlslFile_16x.png" />
-    <None Include="Resources\Next_16x.png" />
-    <Content Include="Resources\Rename_6779.png" />
+    <EmbeddedResource Include="Resources\ClearWindowContent_16x.png" />
+    <EmbeddedResource Include="Resources\ClearBookmark_16x.png" />
+    <EmbeddedResource Include="Resources\BuildErrorList_16x.png" />
+    <EmbeddedResource Include="Resources\ClearBreakpointGroup_16x.png" />
+    <EmbeddedResource Include="Resources\DeleteBreakpoint_16x.png" />
+    <EmbeddedResource Include="Resources\folder_lock_Closed_16xLG.png" />
+    <EmbeddedResource Include="Resources\folder_lock_Open_16xLG.png" />
+    <EmbeddedResource Include="Resources\NewImage_16x.png" />
+    <EmbeddedResource Include="Resources\RawCodeCoverageDataFile_16x.png" />
+    <EmbeddedResource Include="Resources\glsesFile_16x.png" />
+    <EmbeddedResource Include="Resources\glesFile_16x.png" />
+    <EmbeddedResource Include="Resources\hlslFile_16x.png" />
+    <EmbeddedResource Include="Resources\Next_16x.png" />
+    <EmbeddedResource Include="Resources\Rename_6779.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets" Condition="Exists('..\packages\Graphnode.SFML.Net.2.4\build\Graphnode.SFML.Net.targets')" />

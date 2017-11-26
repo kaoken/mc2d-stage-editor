@@ -524,7 +524,7 @@ namespace EditorMC2D.FormBG
             // mBtnPlay
             // 
             this.mBtnPlay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.mBtnPlay.Image = global::EditorMC2D.Properties.Resources.Play1Hot;
+            this.mBtnPlay.Image = global::EditorMC2D.Properties.Resources.PlayVideo_16x;
             this.mBtnPlay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mBtnPlay.Name = "mBtnPlay";
             this.mBtnPlay.Size = new System.Drawing.Size(23, 22);
@@ -534,7 +534,7 @@ namespace EditorMC2D.FormBG
             // mBtnStop
             // 
             this.mBtnStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.mBtnStop.Image = global::EditorMC2D.Properties.Resources.Stop1NormalBlue;
+            this.mBtnStop.Image = global::EditorMC2D.Properties.Resources.Stop_16x;
             this.mBtnStop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mBtnStop.Name = "mBtnStop";
             this.mBtnStop.Size = new System.Drawing.Size(23, 22);

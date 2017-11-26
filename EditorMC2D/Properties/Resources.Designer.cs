@@ -323,16 +323,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap ascii_dbg {
-            get {
-                object obj = ResourceManager.GetObject("ascii_dbg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap AssemblerSourceFile_16x {
             get {
                 object obj = ResourceManager.GetObject("AssemblerSourceFile_16x", resourceCulture);
@@ -1043,26 +1033,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap film {
-            get {
-                object obj = ResourceManager.GetObject("film", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap find {
-            get {
-                object obj = ResourceManager.GetObject("find", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap folder_Closed_16xLG {
             get {
                 object obj = ResourceManager.GetObject("folder_Closed_16xLG", resourceCulture);
@@ -1403,26 +1373,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap image_cultured {
-            get {
-                object obj = ResourceManager.GetObject("image_cultured", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap image_modernist {
-            get {
-                object obj = ResourceManager.GetObject("image_modernist", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap ImageBrowser_16x {
             get {
                 object obj = ResourceManager.GetObject("ImageBrowser_16x", resourceCulture);
@@ -1533,26 +1483,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap layout_content {
-            get {
-                object obj = ResourceManager.GetObject("layout_content", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap layout_edit {
-            get {
-                object obj = ResourceManager.GetObject("layout_edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap LinkedFolder_16x {
             get {
                 object obj = ResourceManager.GetObject("LinkedFolder_16x", resourceCulture);
@@ -1636,36 +1566,6 @@ namespace EditorMC2D.Properties {
         internal static System.Drawing.Bitmap Media_16x {
             get {
                 object obj = ResourceManager.GetObject("Media_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap movie_blue {
-            get {
-                object obj = ResourceManager.GetObject("movie_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap movie_blue_film_strip {
-            get {
-                object obj = ResourceManager.GetObject("movie_blue_film_strip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap movie_blue_film_strip_g {
-            get {
-                object obj = ResourceManager.GetObject("movie_blue_film_strip_g", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1883,26 +1783,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap picture {
-            get {
-                object obj = ResourceManager.GetObject("picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap picture_go {
-            get {
-                object obj = ResourceManager.GetObject("picture_go", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap PipeFolder_16x {
             get {
                 object obj = ResourceManager.GetObject("PipeFolder_16x", resourceCulture);
@@ -1926,26 +1806,6 @@ namespace EditorMC2D.Properties {
         internal static System.Drawing.Bitmap Plan_8x_16x {
             get {
                 object obj = ResourceManager.GetObject("Plan_8x_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Play1Disabled {
-            get {
-                object obj = ResourceManager.GetObject("Play1Disabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Play1Hot {
-            get {
-                object obj = ResourceManager.GetObject("Play1Hot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2213,16 +2073,6 @@ namespace EditorMC2D.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap shape_square_edit {
-            get {
-                object obj = ResourceManager.GetObject("shape_square_edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap ShowAllFiles_16x {
             get {
                 object obj = ResourceManager.GetObject("ShowAllFiles_16x", resourceCulture);
@@ -2336,26 +2186,6 @@ namespace EditorMC2D.Properties {
         internal static System.Drawing.Bitmap Stop_16x {
             get {
                 object obj = ResourceManager.GetObject("Stop_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Stop1Disabled {
-            get {
-                object obj = ResourceManager.GetObject("Stop1Disabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Stop1NormalBlue {
-            get {
-                object obj = ResourceManager.GetObject("Stop1NormalBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

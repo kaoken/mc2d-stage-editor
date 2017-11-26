@@ -12,6 +12,8 @@ namespace TileStageFormat.Tile
         /// <summary>ファイル名ASCII文字で128文字</summary>
         protected byte[] szName;
         /// <summary>幅</summary>
+        public int length;
+        /// <summary>幅</summary>
         public int width;
         /// <summary>高さ</summary>
         public int height;

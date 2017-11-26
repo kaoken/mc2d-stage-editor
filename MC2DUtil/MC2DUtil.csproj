@@ -34,6 +34,16 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DirectXTexInterfaces">
+      <HintPath>..\dll\x86\DirectXTexInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectXTexNet">
+      <HintPath>..\dll\x86\DirectXTexNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectXTexNetImpl">
+      <HintPath>..\dll\x86\DirectXTexNetImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -66,14 +76,18 @@
     <Compile Include="graphics\mcRectF.cs" />
     <Compile Include="graphics\UtilBitmap.cs" />
     <Compile Include="graphics\UtilLine.cs" />
+    <Compile Include="ImageFileInfo.cs" />
+    <Compile Include="MC2DUtil.cs" />
     <Compile Include="MCNumberMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadImage.cs" />
     <Compile Include="SerializableList.cs" />
     <Compile Include="SerializableDictionary.cs" />
     <Compile Include="UtilBuffer.cs" />
     <Compile Include="UtilFile.cs" />
     <Compile Include="UtilTime.cs" />
     <Compile Include="WinAPI\RECT.cs" />
+    <Compile Include="WinAPI\Shell32.cs" />
     <Compile Include="WinAPI\User32.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

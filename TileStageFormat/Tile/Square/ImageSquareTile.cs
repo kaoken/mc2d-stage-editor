@@ -12,8 +12,8 @@ namespace TileStageFormat.Tile.Square
     public class ImageSquareTile : FImageSquareTile
     {
         public List<FSquareTileInfo> tileInfos = null;
-        public int blockX;
-        public int blockY;
+        public int TileWidthSize;
+        public int TileHeightSize;
         public ImageSquareTile()
         {
             tileInfos = new List<FSquareTileInfo>();
